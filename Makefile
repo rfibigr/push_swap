@@ -6,13 +6,13 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/08/30 16:48:29 by rfibigr          ###   ########.fr        #
+#    Updated: 2018/09/07 19:59:19 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
 
 #/******************* DIRECTORIES *******************/
-SRC_PATH =	src
+SRC_PATH =	src/push_swap
 OBJ_PATH =	obj
 INC_PATH =	include
 LIB_PATH =	lib
@@ -22,14 +22,17 @@ CC =			gcc
 CFLAGS =		-Wall -Werror -Wextra
 
 #/********************** BINARY *********************/
-NAME =
+NAME = push_swap
 
 #/********************** SOURCE *********************/
-SRC =
+SRC =	push_swap_lst.c \
+		exit.c \
+		create_pile.c \
 
 
 OBJ =		$(SRC:.c=.o)
-LIBNAME =	libft/libft.a
+LIBNAME =	libft/libft.a \
+			ft_printf/libftprintf.a
 
 #/********************** PATH  *********************/
 LIBP = 		$(addprefix $(LIB_PATH)/,$(LIBNAME))
@@ -45,7 +48,8 @@ all : $(NAME)
 
 $(NAME) : $(OBJP)
 	make -C $(LIB_PATH)/libft
-	(CC) -o $@ $^ $(LIBP)
+	make -C $(LIB_PATH)/ft_printf
+	$(CC) -o $@ $^ $(LIBP)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	mkdir $(OBJ_PATH) 2> /dev/null || true
@@ -54,6 +58,7 @@ clean :
 	rm -rf $(OBJ)
 	rm -rf $(OBJ_PATH) 2 /dev/null || true
 	make clean -C $(LIB_PATH)/libft
+	make clean -C $(LIB_PATH)/ft_printf
 
 fclean : clean
 	rm -rf $(NAME)
@@ -61,6 +66,6 @@ fclean : clean
 
 re: fclean all
 
-debug : $(OBJP)
-	make -C $(LIB_PATH)/libft
-$(CC) -fsanitize=address -g3 $^ $(LIBP) -o $(NAME)
+#debug : $(OBJP)
+#	make -C $(LIB_PATH)/libft
+#$(CC) -fsanitize=address -g3 $^ $(LIBP) -o $(NAME)
