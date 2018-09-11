@@ -6,13 +6,13 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 18:49:51 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/07 18:56:22 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/11 09:56:53 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_list **list)
+void	swap(t_pile **list)
 {
 	int tmp;
 
@@ -21,9 +21,9 @@ void	swap(t_list **list)
 	*list->next->data = tmp;
 }
 
-void	push(t_list **list_a, t_list **list_b)
+void	push(t_pile **list_a, t_pile **list_b)
 {
-	t_list *tmp;
+	t_pile *tmp;
 
 	tmp = *list_a;
 	*list_a = *list_a->next;
@@ -32,12 +32,12 @@ void	push(t_list **list_a, t_list **list_b)
 	*list_b = tmp;
 }
 
-void	rotate(t_list **list)
+void	rotate(t_pile **list)
 {
 	*list = *list->next;
 }
 
-void	reverse_rotate(t_list **list)
+void	reverse_rotate(t_pile **list)
 {
 	*list = *list->previous;
 }

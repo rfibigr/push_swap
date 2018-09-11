@@ -6,14 +6,14 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/07 22:14:43 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/11 09:56:49 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
-void	create_pile(t_list **list, char **av)
+void	create_pile(t_pile **list, char **av)
 {
 	int i;
 
@@ -43,14 +43,14 @@ int	test_param(char *av)
 	return (1);
 }
 
-void add_element(t_list **list, char *av)
+void add_element(t_pile **list, char *av)
 {
-	t_list *new_element;
-	t_list *tmp;
-	t_list *lprevious;
+	t_pile *new_element;
+	t_pile *tmp;
+	t_pile *lprevious;
 
 	tmp = *list;
-	if(!(new_element = (t_list*)malloc(sizeof(t_list))))
+	if(!(new_element = (t_pile*)malloc(sizeof(t_pile))))
 		exit_error_malloc(list);
 	new_element->data = atoi(av);
 	if (*list == NULL)
