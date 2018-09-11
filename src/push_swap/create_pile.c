@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/11 09:56:49 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/11 14:07:52 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,38 +43,33 @@ int	test_param(char *av)
 	return (1);
 }
 
-void add_element(t_pile **list, char *av)
+void add_element(t_pile **begin, char *av)
 {
 	t_pile *new_element;
-	t_pile *tmp;
-	t_pile *lprevious;
-
-	tmp = *list;
+	t_pile *tail;
+//fonction create element;
 	if(!(new_element = (t_pile*)malloc(sizeof(t_pile))))
-		exit_error_malloc(list);
+		exit_error_malloc(begin);
 	new_element->data = atoi(av);
-	if (*list == NULL)
+	tail = NULL;
+	if (*begin == NULL)
 	{
 		new_element->next = NULL;
 		new_element->previous = NULL;
+		*begin = new_element;
 	}
-	else if (new_element->next == NULL)
+	else if ((*begin)->next == NULL)
 	{
-		new_element->next = *list;
-		new_element->previous = *list;
-		tmp->next = new_element;
-		tmp->previous = new_element;
+		new_element->next = *begin;
+		new_element->previous = *begin;
+		(*begin)->next = new_element;
+		(*begin)->previous = new_element;
 	}
 	else
 	{
-		//lst
-		lprevious = tmp->previous;
-		tmp->previous = new_element;
-		//lst->previous;
-		lprevious->next = new_element;
-		//new_element
-		new_element->next = *list;
-		new_element->previous = tmp;
+		(*begin)->previous->next = new_element;
+		(*begin)->previous = new_element;
+		new_element->next = *begin;
+		new_element->previous = tail;
 	}
-	*list = new_element;
 }
