@@ -6,7 +6,7 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/09/11 14:13:44 by rfibigr          ###   ########.fr        #
+#    Updated: 2018/09/12 15:29:14 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -29,6 +29,7 @@ SRC =	push_swap.c \
 		exit.c \
 		create_pile.c \
 		print_pile.c \
+		merge_sort_lst.c \
 
 
 OBJ =		$(SRC:.c=.o)
@@ -70,4 +71,4 @@ re: fclean all
 debug : $(OBJP)
 	make -C $(LIB_PATH)/libft
 	make clean -C $(LIB_PATH)/ft_printf
-	$(CC) -fsanitize=address -g3 $^ $(LIBP) -o $(NAME)
+	$(CC) -g3 -fsanitize=address $^ $(LIBP) -o $(NAME)

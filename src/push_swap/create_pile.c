@@ -6,27 +6,40 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/11 14:07:52 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/12 17:08:07 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap.h"
 
-void	create_pile(t_pile **list, char **av)
+void	create_pile(t_pile **pile_a, char **av)
 {
 	int i;
+	t_pile *tmp;
 
 	i = 1;
 	while (av[i])
 	{
 		if (!(test_param(av[i])))
-			exit_error_param(list);
-		add_element(list, av[i]);
+			exit_error_param(pile_a);
+		add_element(pile_a, av[i]);
 		i++;
 	}
+	tmp = *pile_a;
+	tmp->previous->next = NULL;
+
+	print_pile(tmp, 'a');
+	/*
+	** Merge sorting algo with exit condition if duplicate are found
+	*/
+	merge_sort(&tmp);
 }
 
+/*
+** Test if parameter are number
+** Add fonction to run ./push_swap 12 "45 65" 34
+*/
 int	test_param(char *av)
 {
 	int i;
@@ -47,7 +60,10 @@ void add_element(t_pile **begin, char *av)
 {
 	t_pile *new_element;
 	t_pile *tail;
-//fonction create element;
+
+/*
+** OPTIOMISATION Add fonction to create_element and initialise it if begin == null
+*/
 	if(!(new_element = (t_pile*)malloc(sizeof(t_pile))))
 		exit_error_malloc(begin);
 	new_element->data = atoi(av);
