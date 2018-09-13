@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:16:00 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/13 11:13:55 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/13 14:15:07 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,54 @@
 
 void	print_pile_AB(t_pile *pile_a, t_pile *pile_b)
 {
-	print_pile(pile_a, 'A');
-	print_pile(pile_b, 'B');
+	print_pile(pile_a, "A");
+	print_pile(pile_b, "B");
 	ft_printf("\n-----------------------------------\n");
 
 }
 
-void	print_pile(t_pile *list, char c)
+void	print_pile(t_pile *list, char *str)
 {
 	t_pile *tmp;
 	int i;
 
 	i = 0;
 	tmp = list;
-	ft_printf("PILE %c \n", c);
+	ft_printf("PILE %s \n", str);
 	if (tmp == NULL)
 		return;
 	ft_printf("data[%d] = %d\n",i, tmp->data);
 	i++;
 	tmp = tmp->next;
-	//while (i < 10 && tmp != list)
-	while (tmp != NULL)
+	while (tmp != list && tmp != NULL)
 	{
 		ft_printf("data[%d] = %d\n",i, tmp->data);
 		i++;
 		tmp = tmp->next;
+	}
+	ft_printf("\n");
+}
+
+void	print_pile_previous(t_pile *list, char *str)
+{
+	t_pile *tmp;
+	int i;
+
+	i = 0;
+	tmp = list;
+	ft_printf("PILE %s \n", str);
+	if (tmp == NULL)
+		return;
+	// ft_printf("data[%d] = %d\n",i, tmp->data);
+	ft_printf("data[%d] = %p\n",i, tmp);
+	i++;
+	tmp = tmp->previous;
+	while (tmp != list && tmp != NULL)
+	{
+		// ft_printf("data[%d] = %d\n",i, tmp->data);
+		ft_printf("data[%d] = %p\n",i, tmp);
+		i++;
+		tmp = tmp->previous;
 	}
 	ft_printf("\n");
 }

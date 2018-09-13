@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:31:35 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/11 09:56:51 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/13 14:33:46 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,34 @@
 
 void	exit_error_param(t_pile **list)
 {
-	(void) **list;
 	write(1, "Error\n", 6);
-	//free lst;
-	exit (1);
-
+	if (list != NULL)
+	{
+		free_lst(list);
+		exit(1);
+	}
 }
 
 void	exit_error_malloc(t_pile **list)
 {
-	(void) **list;
+	(void)**list;
 	write(1, "Malloc : fail\n", 14);
-	//free lst;
-	exit (1);
+	free_lst(list);
+	exit(1);
+}
+
+void	free_lst(t_pile **list)
+{
+	t_pile *tmp;
+	t_pile *start;
+
+	start = *list;
+	tmp = *list;
+	while ((*list)->previous != start)
+	{
+		tmp = *list;
+		*list = (*list)->previous;
+		free(tmp);
+	}
+	free(*list);
 }

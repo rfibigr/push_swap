@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 10:40:22 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/13 11:13:53 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/13 13:59:06 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@ void	merge_sort(t_pile **list)
 	t_pile *right;
 
 	if (*list == NULL || (*list)->next == NULL)
-		return;
+		return ;
 	split_chain(*list, &left, &right);
 	merge_sort(&left);
 	merge_sort(&right);
-
-
 	merge(list, left, right);
-	print_pile(*list, 'X');
 }
 
 void	merge(t_pile **list, t_pile *left, t_pile *right)
@@ -33,10 +30,10 @@ void	merge(t_pile **list, t_pile *left, t_pile *right)
 	t_pile *result;
 
 	result = NULL;
-	while (left != NULL && right !=NULL)
+	while (left != NULL && right != NULL)
 	{
 		if (left->data == right->data)
-			exit_error_param(NULL);
+			exit_error_param(list);
 		if (left->data < right->data)
 			push_back(&result, &left);
 		else
@@ -84,7 +81,6 @@ void	push_back(t_pile **result, t_pile **add)
 		*result = elem_to_add;
 	else
 	{
-		/* go to the tail au result */
 		while (tmp->next)
 			tmp = tmp->next;
 		tmp->next = elem_to_add;
