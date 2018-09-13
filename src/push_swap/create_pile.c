@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/12 17:08:07 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/13 11:13:34 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,7 @@ void	create_pile(t_pile **pile_a, char **av)
 	tmp->previous->next = NULL;
 
 	print_pile(tmp, 'a');
-	/*
-	** Merge sorting algo with exit condition if duplicate are found
-	*/
+	/* Merge sorting algo with exit condition if duplicate are found */
 	merge_sort(&tmp);
 }
 
