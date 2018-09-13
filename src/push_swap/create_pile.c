@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/13 14:33:41 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/13 15:37:18 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,12 +59,15 @@ int		test_param(char *av)
 	int i;
 
 	i = 0;
+	if (av[i] == '-')
+		i++;
+	ft_printf("strcmp = %d\n", ft_strcmp(intmax, av) + i);
+	// if (ft_strcmp(intmax, av) + i > 0)
+	//	return (0);
 	// VERIF INT MAX / INT MIN
 	while (av[i])
 	{
-		if (i == 0 && av[i] != '-' && (av[i] < '0' || av[i] > '9'))
-			return (0);
-		else if (i != 0 && (av[i] < '0' || av[i] > '9'))
+		if (i != 0 && (av[i] < '0' || av[i] > '9'))
 			return (0);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:31:35 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/13 14:33:46 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/13 15:24:19 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	exit_error_param(t_pile **list)
 {
 	write(1, "Error\n", 6);
+	print_pile(*list, "BEFORE FREE");
 	if (list != NULL)
 	{
 		free_lst(list);
@@ -41,7 +42,9 @@ void	free_lst(t_pile **list)
 	{
 		tmp = *list;
 		*list = (*list)->previous;
+		ft_printf("free %p\n", tmp);
 		free(tmp);
 	}
+	ft_printf("free %p\n", *list);
 	free(*list);
 }
