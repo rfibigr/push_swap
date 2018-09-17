@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/13 14:09:12 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/17 14:00:50 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
 // STRUCTURE
 typedef struct		s_pile
@@ -52,7 +53,8 @@ void	free_lst(t_pile **list);
 //SORT_PILE
 void	sort_pile(t_pile **pile_a, t_pile **pile_b);
 
-
+//TOOLS
+int		ft_atoi_exit(const char *s, t_pile **begin);
 
 
 void	add(t_pile **list, t_pile *left, t_pile *right);

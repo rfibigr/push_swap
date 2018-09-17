@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/13 15:37:18 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/17 15:10:06 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	create_pile(t_pile **pile_a, char **av)
 	* tmp to make the listnull terminated
 	*/
 	tmp = *pile_a;
-	tmp->previous->next = NULL;
+	if (tmp->previous)
+		tmp->previous->next = NULL;
 	merge_sort(&tmp);
 	reorder_lst_order(*pile_a);
 }
@@ -40,7 +41,7 @@ void	reorder_lst_order(t_pile *pile_a)
 	t_pile *tmp;
 
 	tmp = pile_a;
-	if (tmp == NULL)
+	if (tmp == NULL || tmp->next == NULL)
 		return ;
 	while(tmp->previous != pile_a)
 	{
@@ -61,7 +62,7 @@ int		test_param(char *av)
 	i = 0;
 	if (av[i] == '-')
 		i++;
-	ft_printf("strcmp = %d\n", ft_strcmp(intmax, av) + i);
+	//ft_printf("strcmp = %d\n", ft_strcmp(intmax, av) + i);
 	// if (ft_strcmp(intmax, av) + i > 0)
 	//	return (0);
 	// VERIF INT MAX / INT MIN
@@ -84,7 +85,6 @@ void	add_element(t_pile **begin, char *av)
 */
 	if (!(new_element = (t_pile*)malloc(sizeof(t_pile))))
 		exit_error_malloc(begin);
-	new_element->data = atoi(av);
 	tail = NULL;
 	if (*begin == NULL)
 	{
@@ -107,4 +107,5 @@ void	add_element(t_pile **begin, char *av)
 		new_element->next = *begin;
 		new_element->previous = tail;
 	}
+	new_element->data = ft_atoi_exit(av, begin);
 }
