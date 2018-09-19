@@ -6,7 +6,7 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/09/19 12:54:45 by rfibigr          ###   ########.fr        #
+#    Updated: 2018/09/19 18:09:47 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -75,3 +75,8 @@ debug : $(OBJP)
 	make -C $(LIB_PATH)/libft
 	make clean -C $(LIB_PATH)/ft_printf
 	$(CC) -g3 -fsanitize=address $^ $(LIBP) -o $(NAME)
+
+g : $(OBJP)
+	make -C $(LIB_PATH)/libft
+	make clean -C $(LIB_PATH)/ft_printf
+	$(CC) -g $^ $(LIBP) -o $(NAME)

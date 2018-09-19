@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/19 12:54:26 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/19 13:08:07 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,6 @@ void	swap(t_pile **pile);
 void	push(t_pile **pile_one, t_pile **pile_two);
 void	rotate(t_pile **pile);
 void	reverse_rotate(t_pile **pile);
-
 
 //TOOLS
 int		ft_atoi_exit(const char *s, t_pile **begin);

@@ -1,0 +1,2753 @@
+PILE A 
+data[0] = 87 | 0x7ffaa9402600
+data[1] = 22 | 0x7ffaa9402620
+data[2] = 100 | 0x7ffaa9402640
+data[3] = 51 | 0x7ffaa9402660
+data[4] = 27 | 0x7ffaa9402680
+data[5] = 80 | 0x7ffaa94026a0
+data[6] = 25 | 0x7ffaa94026c0
+data[7] = 47 | 0x7ffaa94026e0
+data[8] = 89 | 0x7ffaa9402700
+data[9] = 67 | 0x7ffaa9402720
+data[10] = 21 | 0x7ffaa9402740
+data[11] = 72 | 0x7ffaa9402760
+data[12] = 12 | 0x7ffaa9402780
+data[13] = 96 | 0x7ffaa94027a0
+data[14] = 20 | 0x7ffaa94027c0
+data[15] = 18 | 0x7ffaa94027e0
+data[16] = 46 | 0x7ffaa9402800
+data[17] = 63 | 0x7ffaa9402820
+data[18] = 82 | 0x7ffaa9402840
+data[19] = 71 | 0x7ffaa9402860
+data[20] = 39 | 0x7ffaa9402880
+data[21] = 50 | 0x7ffaa94028a0
+data[22] = 3 | 0x7ffaa94028c0
+data[23] = 29 | 0x7ffaa94028e0
+data[24] = 86 | 0x7ffaa9402900
+data[25] = 4 | 0x7ffaa9402920
+data[26] = 42 | 0x7ffaa9402940
+data[27] = 15 | 0x7ffaa9402960
+data[28] = 31 | 0x7ffaa9402980
+data[29] = 7 | 0x7ffaa94029a0
+data[30] = 88 | 0x7ffaa94029c0
+data[31] = 92 | 0x7ffaa94029e0
+data[32] = 85 | 0x7ffaa9402a00
+data[33] = 19 | 0x7ffaa9402a20
+data[34] = 16 | 0x7ffaa9402a40
+data[35] = 95 | 0x7ffaa9402a60
+data[36] = 56 | 0x7ffaa9402a80
+data[37] = 70 | 0x7ffaa9402aa0
+data[38] = 98 | 0x7ffaa9402ac0
+data[39] = 32 | 0x7ffaa9402ae0
+data[40] = 1 | 0x7ffaa9402b00
+data[41] = 44 | 0x7ffaa9402b20
+data[42] = 93 | 0x7ffaa9402b40
+data[43] = 5 | 0x7ffaa9402b60
+data[44] = 49 | 0x7ffaa9402b80
+data[45] = 60 | 0x7ffaa9402ba0
+data[46] = 35 | 0x7ffaa9402bc0
+data[47] = 53 | 0x7ffaa9402be0
+data[48] = 75 | 0x7ffaa9402c00
+data[49] = 78 | 0x7ffaa9402c20
+data[50] = 57 | 0x7ffaa9402c40
+data[51] = 10 | 0x7ffaa9402c60
+data[52] = 36 | 0x7ffaa9402c80
+data[53] = 40 | 0x7ffaa9402ca0
+data[54] = 79 | 0x7ffaa9402cc0
+data[55] = 69 | 0x7ffaa9402ce0
+data[56] = 26 | 0x7ffaa9402d00
+data[57] = 68 | 0x7ffaa9402d20
+data[58] = 73 | 0x7ffaa9402d40
+data[59] = 38 | 0x7ffaa9402d60
+data[60] = 58 | 0x7ffaa9402d80
+data[61] = 81 | 0x7ffaa9402da0
+data[62] = 65 | 0x7ffaa9402dc0
+data[63] = 14 | 0x7ffaa9402de0
+data[64] = 77 | 0x7ffaa9402e00
+data[65] = 66 | 0x7ffaa9402e20
+data[66] = 91 | 0x7ffaa9402e40
+data[67] = 61 | 0x7ffaa9402e60
+data[68] = 99 | 0x7ffaa9402e80
+data[69] = 62 | 0x7ffaa9402ea0
+data[70] = 17 | 0x7ffaa9402ec0
+data[71] = 33 | 0x7ffaa9402ee0
+data[72] = 74 | 0x7ffaa9402f00
+data[73] = 9 | 0x7ffaa9402f20
+data[74] = 11 | 0x7ffaa9402f40
+data[75] = 48 | 0x7ffaa9402f60
+data[76] = 6 | 0x7ffaa9402f80
+data[77] = 2 | 0x7ffaa9402fa0
+data[78] = 45 | 0x7ffaa9402fc0
+data[79] = 94 | 0x7ffaa9402fe0
+data[80] = 83 | 0x7ffaa9403000
+data[81] = 13 | 0x7ffaa9403020
+data[82] = 76 | 0x7ffaa9403040
+data[83] = 64 | 0x7ffaa9403060
+data[84] = 43 | 0x7ffaa9403080
+data[85] = 8 | 0x7ffaa94030a0
+data[86] = 37 | 0x7ffaa94030c0
+data[87] = 97 | 0x7ffaa94030e0
+data[88] = 34 | 0x7ffaa9403100
+data[89] = 59 | 0x7ffaa9403120
+data[90] = 54 | 0x7ffaa9403140
+data[91] = 24 | 0x7ffaa9403160
+data[92] = 55 | 0x7ffaa9403180
+data[93] = 84 | 0x7ffaa94031a0
+data[94] = 52 | 0x7ffaa94031c0
+data[95] = 41 | 0x7ffaa94031e0
+data[96] = 30 | 0x7ffaa9403200
+data[97] = 23 | 0x7ffaa9403220
+data[98] = 90 | 0x7ffaa9403240
+data[99] = 28 | 0x7ffaa9403260
+
+PILE B 
+
+-----------------------------------
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+ra
+pa
+ra
+pa
+pa
+pa
+ra
+pa
+pa
+ra
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+ra
+pa
+pa
+		END
+--------------------------
+PILE A 
+data[0] = 1 | 0x7ffaa9402b00
+data[1] = 2 | 0x7ffaa9402fa0
+data[2] = 3 | 0x7ffaa94028c0
+data[3] = 4 | 0x7ffaa9402920
+data[4] = 5 | 0x7ffaa9402b60
+data[5] = 6 | 0x7ffaa9402f80
+data[6] = 7 | 0x7ffaa94029a0
+data[7] = 8 | 0x7ffaa94030a0
+data[8] = 9 | 0x7ffaa9402f20
+data[9] = 10 | 0x7ffaa9402c60
+data[10] = 11 | 0x7ffaa9402f40
+data[11] = 12 | 0x7ffaa9402780
+data[12] = 13 | 0x7ffaa9403020
+data[13] = 14 | 0x7ffaa9402de0
+data[14] = 15 | 0x7ffaa9402960
+data[15] = 16 | 0x7ffaa9402a40
+data[16] = 17 | 0x7ffaa9402ec0
+data[17] = 18 | 0x7ffaa94027e0
+data[18] = 19 | 0x7ffaa9402a20
+data[19] = 20 | 0x7ffaa94027c0
+data[20] = 21 | 0x7ffaa9402740
+data[21] = 22 | 0x7ffaa9402620
+data[22] = 23 | 0x7ffaa9403220
+data[23] = 24 | 0x7ffaa9403160
+data[24] = 25 | 0x7ffaa94026c0
+data[25] = 26 | 0x7ffaa9402d00
+data[26] = 27 | 0x7ffaa9402680
+data[27] = 28 | 0x7ffaa9403260
+data[28] = 29 | 0x7ffaa94028e0
+data[29] = 30 | 0x7ffaa9403200
+data[30] = 31 | 0x7ffaa9402980
+data[31] = 32 | 0x7ffaa9402ae0
+data[32] = 33 | 0x7ffaa9402ee0
+data[33] = 34 | 0x7ffaa9403100
+data[34] = 35 | 0x7ffaa9402bc0
+data[35] = 36 | 0x7ffaa9402c80
+data[36] = 37 | 0x7ffaa94030c0
+data[37] = 38 | 0x7ffaa9402d60
+data[38] = 39 | 0x7ffaa9402880
+data[39] = 40 | 0x7ffaa9402ca0
+data[40] = 41 | 0x7ffaa94031e0
+data[41] = 42 | 0x7ffaa9402940
+data[42] = 43 | 0x7ffaa9403080
+data[43] = 44 | 0x7ffaa9402b20
+data[44] = 45 | 0x7ffaa9402fc0
+data[45] = 46 | 0x7ffaa9402800
+data[46] = 47 | 0x7ffaa94026e0
+data[47] = 48 | 0x7ffaa9402f60
+data[48] = 49 | 0x7ffaa9402b80
+data[49] = 50 | 0x7ffaa94028a0
+data[50] = 51 | 0x7ffaa9402660
+data[51] = 52 | 0x7ffaa94031c0
+data[52] = 53 | 0x7ffaa9402be0
+data[53] = 54 | 0x7ffaa9403140
+data[54] = 55 | 0x7ffaa9403180
+data[55] = 56 | 0x7ffaa9402a80
+data[56] = 57 | 0x7ffaa9402c40
+data[57] = 58 | 0x7ffaa9402d80
+data[58] = 59 | 0x7ffaa9403120
+data[59] = 60 | 0x7ffaa9402ba0
+data[60] = 61 | 0x7ffaa9402e60
+data[61] = 62 | 0x7ffaa9402ea0
+data[62] = 63 | 0x7ffaa9402820
+data[63] = 64 | 0x7ffaa9403060
+data[64] = 65 | 0x7ffaa9402dc0
+data[65] = 66 | 0x7ffaa9402e20
+data[66] = 67 | 0x7ffaa9402720
+data[67] = 68 | 0x7ffaa9402d20
+data[68] = 69 | 0x7ffaa9402ce0
+data[69] = 70 | 0x7ffaa9402aa0
+data[70] = 71 | 0x7ffaa9402860
+data[71] = 72 | 0x7ffaa9402760
+data[72] = 73 | 0x7ffaa9402d40
+data[73] = 74 | 0x7ffaa9402f00
+data[74] = 75 | 0x7ffaa9402c00
+data[75] = 76 | 0x7ffaa9403040
+data[76] = 77 | 0x7ffaa9402e00
+data[77] = 78 | 0x7ffaa9402c20
+data[78] = 79 | 0x7ffaa9402cc0
+data[79] = 80 | 0x7ffaa94026a0
+data[80] = 81 | 0x7ffaa9402da0
+data[81] = 82 | 0x7ffaa9402840
+data[82] = 83 | 0x7ffaa9403000
+data[83] = 84 | 0x7ffaa94031a0
+data[84] = 85 | 0x7ffaa9402a00
+data[85] = 86 | 0x7ffaa9402900
+data[86] = 87 | 0x7ffaa9402600
+data[87] = 88 | 0x7ffaa94029c0
+data[88] = 89 | 0x7ffaa9402700
+data[89] = 90 | 0x7ffaa9403240
+data[90] = 91 | 0x7ffaa9402e40
+data[91] = 92 | 0x7ffaa94029e0
+data[92] = 93 | 0x7ffaa9402b40
+data[93] = 94 | 0x7ffaa9402fe0
+data[94] = 95 | 0x7ffaa9402a60
+data[95] = 96 | 0x7ffaa94027a0
+data[96] = 97 | 0x7ffaa94030e0
+data[97] = 98 | 0x7ffaa9402ac0
+data[98] = 99 | 0x7ffaa9402e80
+data[99] = 100 | 0x7ffaa9402640
+
+PILE B 
+
+-----------------------------------
+free 0x7ffaa9402b00
+free 0x7ffaa9402640
+free 0x7ffaa9402e80
+free 0x7ffaa9402ac0
+free 0x7ffaa94030e0
+free 0x7ffaa94027a0
+free 0x7ffaa9402a60
+free 0x7ffaa9402fe0
+free 0x7ffaa9402b40
+free 0x7ffaa94029e0
+free 0x7ffaa9402e40
+free 0x7ffaa9403240
+free 0x7ffaa9402700
+free 0x7ffaa94029c0
+free 0x7ffaa9402600
+free 0x7ffaa9402900
+free 0x7ffaa9402a00
+free 0x7ffaa94031a0
+free 0x7ffaa9403000
+free 0x7ffaa9402840
+free 0x7ffaa9402da0
+free 0x7ffaa94026a0
+free 0x7ffaa9402cc0
+free 0x7ffaa9402c20
+free 0x7ffaa9402e00
+free 0x7ffaa9403040
+free 0x7ffaa9402c00
+free 0x7ffaa9402f00
+free 0x7ffaa9402d40
+free 0x7ffaa9402760
+free 0x7ffaa9402860
+free 0x7ffaa9402aa0
+free 0x7ffaa9402ce0
+free 0x7ffaa9402d20
+free 0x7ffaa9402720
+free 0x7ffaa9402e20
+free 0x7ffaa9402dc0
+free 0x7ffaa9403060
+free 0x7ffaa9402820
+free 0x7ffaa9402ea0
+free 0x7ffaa9402e60
+free 0x7ffaa9402ba0
+free 0x7ffaa9403120
+free 0x7ffaa9402d80
+free 0x7ffaa9402c40
+free 0x7ffaa9402a80
+free 0x7ffaa9403180
+free 0x7ffaa9403140
+free 0x7ffaa9402be0
+free 0x7ffaa94031c0
+free 0x7ffaa9402660
+free 0x7ffaa94028a0
+free 0x7ffaa9402b80
+free 0x7ffaa9402f60
+free 0x7ffaa94026e0
+free 0x7ffaa9402800
+free 0x7ffaa9402fc0
+free 0x7ffaa9402b20
+free 0x7ffaa9403080
+free 0x7ffaa9402940
+free 0x7ffaa94031e0
+free 0x7ffaa9402ca0
+free 0x7ffaa9402880
+free 0x7ffaa9402d60
+free 0x7ffaa94030c0
+free 0x7ffaa9402c80
+free 0x7ffaa9402bc0
+free 0x7ffaa9403100
+free 0x7ffaa9402ee0
+free 0x7ffaa9402ae0
+free 0x7ffaa9402980
+free 0x7ffaa9403200
+free 0x7ffaa94028e0
+free 0x7ffaa9403260
+free 0x7ffaa9402680
+free 0x7ffaa9402d00
+free 0x7ffaa94026c0
+free 0x7ffaa9403160
+free 0x7ffaa9403220
+free 0x7ffaa9402620
+free 0x7ffaa9402740
+free 0x7ffaa94027c0
+free 0x7ffaa9402a20
+free 0x7ffaa94027e0
+free 0x7ffaa9402ec0
+free 0x7ffaa9402a40
+free 0x7ffaa9402960
+free 0x7ffaa9402de0
+free 0x7ffaa9403020
+free 0x7ffaa9402780
+free 0x7ffaa9402f40
+free 0x7ffaa9402c60
+free 0x7ffaa9402f20
+free 0x7ffaa94030a0
+free 0x7ffaa94029a0
+free 0x7ffaa9402f80
+free 0x7ffaa9402b60
+free 0x7ffaa9402920
+free 0x7ffaa94028c0
+free 0x7ffaa9402fa0

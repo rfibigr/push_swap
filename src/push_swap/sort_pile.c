@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:08:38 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/19 13:05:02 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/19 21:19:45 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,15 @@ void	sort_pile(t_pile **pile_a, t_pile **pile_b)
 {
 	while (pile_is_sort(pile_a) != 1)
 	{
-		ft_printf("pile is sort %d\n", pile_is_sort(pile_a));
-		while (pile_a)
+		while (*pile_a != NULL)
 		{
-		print_pile_AB(*pile_a, *pile_b);
 			push_max_decroissant(pile_a, pile_b);
 			push_min_croissant(pile_a, pile_b);
 		}
-		while (pile_b)
+		while (*pile_b != NULL)
 		{
-		print_pile_AB(*pile_a, *pile_b);
-			push_max_decroissant(pile_a, pile_b);
-			push_min_croissant(pile_a, pile_b);
+			push_max_decroissant(pile_b, pile_a);
+			push_min_croissant(pile_b, pile_a);
 		}
 	}
 }
@@ -51,44 +48,75 @@ int		pile_is_sort(t_pile **pile)
 
 void	push_max_decroissant(t_pile **pile_one, t_pile **pile_two)
 {
-	if (pile_two == NULL)
-		push(pile_one, pile_two);
-	while (pile_one)
+	if (*pile_one == NULL)
+		return;
+	if (*pile_two == NULL)
 	{
-		if ((*pile_one)->previous == NULL && (*pile_one)->data < (*pile_two)->data)
+		if ((*pile_one)->previous->data > (*pile_one)->data)
+			reverse_rotate(pile_one);
+		push(pile_one, pile_two);
+	}
+	while (*pile_one != NULL)
+	{
+	// ft_printf("pile a = %d, pile a previous = %d, pile b = %d\n",(*pile_one)->data, (*pile_one)->previous->data, (*pile_two)->data);
+	if ((*pile_one)->previous->data > (*pile_two)->data
+									&& (*pile_one)->data > (*pile_two)->data)
+									return ;
+		if ((*pile_one)->previous == (*pile_one))
+		{
 			push(pile_one, pile_two);
+			return ;
+		}
 		else if ((*pile_one)->previous->data > (*pile_one)->data
-										&& (*pile_one)->previous->data < (*pile_two)->data)
+					&& (*pile_one)->previous->data < (*pile_two)->data)
 		{
 			reverse_rotate(pile_one);
 			push(pile_one, pile_two);
 		}
-		else if ((*pile_one)->previous->data < (*pile_one)->data
-										&& (*pile_one)->data < (*pile_two)->data)
+		else if ((*pile_one)->data < (*pile_two)->data)
+		{
 			push(pile_one, pile_two);
+		}
+		else if ((*pile_one)->previous->data < (*pile_two)->data)
+		{
+			push(pile_one, pile_two);
+		}
 	}
-	return ;
 }
 
 void	push_min_croissant(t_pile **pile_one, t_pile **pile_two)
 {
-	if (pile_two == NULL)
-		push(pile_one, pile_two);
-	while (pile_one)
+	if (*pile_one == NULL)
+		return;
+	if (*pile_two == NULL)
 	{
+		push(pile_one, pile_two);
+	}
+	while (*pile_one != NULL)
+	{
+	if ((*pile_one)->previous->data < (*pile_two)->data
+									&& (*pile_one)->data < (*pile_two)->data)
+									return ;
 		if ((*pile_one)->previous == NULL && (*pile_one)->data > (*pile_two)->data)
+		{
 			push(pile_one, pile_two);
-		else if ((*pile_one)->previous->data > (*pile_one)->data
-										&& (*pile_one)->previous->data > (*pile_two)->data)
+			return;
+		}
+		else if ((*pile_one)->previous->data < (*pile_one)->data
+						&& (*pile_one)->previous->data > (*pile_two)->data)
 		{
 			reverse_rotate(pile_one);
 			push(pile_one, pile_two);
 		}
-		else if ((*pile_one)->previous->data < (*pile_one)->data
-													&& (*pile_one)->data > (*pile_two)->data)
+		else if ((*pile_one)->data > (*pile_two)->data)
+		{
 			push(pile_one, pile_two);
+		}
+		else if ((*pile_one)->previous->data > (*pile_two)->data)
+		{
+			push(pile_one, pile_two);
+		}
 	}
-	return ;
 }
 /* IDEE ALGO
 phase 1 :
