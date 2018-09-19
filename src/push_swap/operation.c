@@ -6,38 +6,38 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 18:49:51 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/11 16:36:24 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/19 13:01:52 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_pile **list)
+void	swap(t_pile **pile)
 {
 	int tmp;
 
-	tmp = *list->data;
-	*list->data = *list->next->data;
-	*list->next->data = tmp;
+	tmp = (*pile)->data;
+	(*pile)->data = (*pile)->next->data;
+	(*pile)->next->data = tmp;
 }
 
-void	push(t_pile **list_a, t_pile **list_b)
+void	push(t_pile **pile_one, t_pile **pile_two)
 {
 	t_pile *tmp;
 
-	tmp = *list_a;
-	*list_a = *list_a->next;
-	if (*list->b)
-		tmp->next = *list_b;
-	*list_b = tmp;
+	tmp = *pile_one;
+	(*pile_one) = (*pile_one)->next;
+	if (*pile_two)
+		tmp->next = (*pile_two);
+	(*pile_two) = tmp;
 }
 
-void	rotate(t_pile **list)
+void	rotate(t_pile **pile)
 {
-	*list = *list->next;
+	*pile = (*pile)->next;
 }
 
-void	reverse_rotate(t_pile **list)
+void	reverse_rotate(t_pile **pile)
 {
-	*list = *list->previous;
+	*pile = (*pile)->previous;
 }

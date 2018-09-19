@@ -6,7 +6,7 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/09/17 19:33:16 by rfibigr          ###   ########.fr        #
+#    Updated: 2018/09/19 12:54:45 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -31,6 +31,8 @@ SRC =	push_swap.c \
 		print_pile.c \
 		merge_sort_lst.c \
 		tools.c \
+		sort_pile.c \
+		operation.c
 
 
 OBJ =		$(SRC:.c=.o)

@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/17 14:00:50 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/19 12:54:26 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,16 @@ void	free_lst(t_pile **list);
 
 //SORT_PILE
 void	sort_pile(t_pile **pile_a, t_pile **pile_b);
+int		pile_is_sort(t_pile **pile);
+void	push_max_decroissant(t_pile **pile_one, t_pile **pile_two);
+void	push_min_croissant(t_pile **pile_one, t_pile **pile_two);
+
+//OPERATION
+void	swap(t_pile **pile);
+void	push(t_pile **pile_one, t_pile **pile_two);
+void	rotate(t_pile **pile);
+void	reverse_rotate(t_pile **pile);
+
 
 //TOOLS
 int		ft_atoi_exit(const char *s, t_pile **begin);
