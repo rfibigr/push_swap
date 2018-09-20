@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/19 13:08:07 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/20 17:24:29 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,24 @@ void	free_lst(t_pile **list);
 //SORT_PILE
 void	sort_pile(t_pile **pile_a, t_pile **pile_b);
 int		pile_is_sort(t_pile **pile);
-void	push_max_decroissant(t_pile **pile_one, t_pile **pile_two);
-void	push_min_croissant(t_pile **pile_one, t_pile **pile_two);
+void	push_max_decroissant(t_pile **pile_one, t_pile **pile_two, char c);
+void	push_min_croissant(t_pile **pile_one, t_pile **pile_two, char c);
+
+int		test_previous_min(t_pile **pile_one, int data_two);
+int		test_top_min(t_pile **pile_one, int data_two);
+int		test_previous_max(t_pile **pile_one, int data_two);
+int		test_top_max(t_pile **pile_one, int data_two);
+
 
 //OPERATION
-void	swap(t_pile **pile);
-void	push(t_pile **pile_one, t_pile **pile_two);
-void	rotate(t_pile **pile);
-void	reverse_rotate(t_pile **pile);
+void	swap(t_pile **pile, char c);
+void	push(t_pile **pile_one, t_pile **pile_two, char c);
+void	rotate(t_pile **pile, char c);
+void	reverse_rotate(t_pile **pile, char c);
 
 //TOOLS
 int		ft_atoi_exit(const char *s, t_pile **begin);
+void	test(t_pile **pile_a, t_pile **pile_b);
 
 
 void	add(t_pile **list, t_pile *left, t_pile *right);

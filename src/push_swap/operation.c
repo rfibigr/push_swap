@@ -6,23 +6,23 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 18:49:51 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/19 20:59:41 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/20 15:37:01 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_pile **pile)
+void	swap(t_pile **pile, char c)
 {
 	int tmp;
 
 	tmp = (*pile)->data;
 	(*pile)->data = (*pile)->next->data;
 	(*pile)->next->data = tmp;
-	ft_printf("sa\n");
+	ft_printf("s%c\n", c);
 }
 
-void	push(t_pile **pile_one, t_pile **pile_two)
+void	push(t_pile **pile_one, t_pile **pile_two, char c)
 {
 	t_pile *new_top_one;
 
@@ -47,17 +47,21 @@ void	push(t_pile **pile_one, t_pile **pile_two)
 	(*pile_two)->previous = (*pile_one);
 	(*pile_two) = (*pile_one);
 	(*pile_one) = new_top_one;
-	ft_printf("pa\n");
+	if (c == 'a')
+		c = 'b';
+	else
+		c = 'a';
+	ft_printf("p%c\n", c);
 }
 
-void	rotate(t_pile **pile)
+void	rotate(t_pile **pile, char c)
 {
 	*pile = (*pile)->next;
-	ft_printf("ra\n");
+	ft_printf("r%c\n", c);
 }
 
-void	reverse_rotate(t_pile **pile)
+void	reverse_rotate(t_pile **pile, char c)
 {
 	*pile = (*pile)->previous;
-	ft_printf("ra\n");
+	ft_printf("rr%c\n", c);
 }
