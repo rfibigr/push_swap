@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/20 17:24:29 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/22 23:53:38 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int		pile_is_sort(t_pile **pile);
 void	push_max_decroissant(t_pile **pile_one, t_pile **pile_two, char c);
 void	push_min_croissant(t_pile **pile_one, t_pile **pile_two, char c);
 
-int		test_previous_min(t_pile **pile_one, int data_two);
-int		test_top_min(t_pile **pile_one, int data_two);
+int		test_previous_min(t_pile *pile_one, int data_two);
+int		test_top_min(t_pile *pile_one, int data_two);
 int		test_previous_max(t_pile **pile_one, int data_two);
 int		test_top_max(t_pile **pile_one, int data_two);
 

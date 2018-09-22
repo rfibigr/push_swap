@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:08:38 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/20 17:25:09 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/23 00:21:43 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,13 +67,12 @@ void	push_max_decroissant(t_pile **pile_one, t_pile **pile_two, char c)
 	}
 	while (*pile_one != NULL)
 	{
-		ft_printf("pre = %d, top = %d, next = %d\n",(*pile_one)->previous->data, (*pile_one)->data, (*pile_one)->next->data);
 		if(test_previous_max(&(*pile_one)->previous, (*pile_two)->data))
 {
 			reverse_rotate(pile_one, c);
 			push(pile_one, pile_two, c);
 }
-		else if(test_top_max(&(*pile_one), (*pile_two)->data))
+		else if(test_top_max(pile_one, (*pile_two)->data))
 {
 			push(pile_one, pile_two, c);
 }
@@ -116,7 +115,6 @@ void	push_max_decroissant(t_pile **pile_one, t_pile **pile_two, char c)
 
 void	push_min_croissant(t_pile **pile_one, t_pile **pile_two, char c)
 {
-	ft_printf("HELL");
 	if (*pile_one == NULL)
 		return;
 	if (*pile_two == NULL)
@@ -136,16 +134,16 @@ void	push_min_croissant(t_pile **pile_one, t_pile **pile_two, char c)
 	}
 	while (*pile_one != NULL)
 	{
-		if(test_previous_min(&(*pile_one)->previous, (*pile_two)->data))
+		if(test_previous_min((*pile_one)->previous, (*pile_two)->data))
 {
 			reverse_rotate(pile_one, c);
 			push(pile_one, pile_two, c);
 }
-		else if(test_top_min(&(*pile_one), (*pile_two)->data))
+		else if(test_top_min(*pile_one, (*pile_two)->data))
 {
 			push(pile_one, pile_two, c);
 }
-		else if((*pile_one)->next->data < (*pile_two)->data)
+		else if((*pile_one)->next->data > (*pile_two)->data)
 		{
 			swap(pile_one, c);
 			push(pile_one, pile_two, c);
@@ -184,22 +182,22 @@ void	push_min_croissant(t_pile **pile_one, t_pile **pile_two, char c)
 }
 
 // CALCUL THE MINIMUM VALUE POSSIBLE TO PUSH AND PILE THE NODE IN TOP OF THE PILE
-int		test_previous_min(t_pile **pile_one, int data_two)
+int		test_previous_min(t_pile *pile_one, int data_two)
 {
-	if ((*pile_one)->data < data_two)
+	if (pile_one->data < data_two)
 		return (0);
-	if ((*pile_one)->next->data < data_two && (*pile_one)->data > (*pile_one)->next->data)
+	if (pile_one->next->data > data_two && pile_one->next->data < pile_one->data)
 		return (0);
-	if ((*pile_one)->next->next->data < data_two && (*pile_one)->data > (*pile_one)->next->next->data)
+	if (pile_one->next->next->data > data_two && pile_one->next->next->data < pile_one->data)
 		return (0);
 	return(1);
 }
 
-int		test_top_min(t_pile **pile_one, int data_two)
+int		test_top_min(t_pile *pile_one, int data_two)
 {
-	if ((*pile_one)->data < data_two)
+	if (pile_one->data < data_two)
 		return (0);
-	if ((*pile_one)->next->data < data_two && (*pile_one)->data > (*pile_one)->next->data)
+	if (pile_one->next->data > data_two && pile_one->next->data < pile_one->data)
 		return (0);
 	return(1);
 }
@@ -208,9 +206,9 @@ int		test_previous_max(t_pile **pile_one, int data_two)
 {
 	if ((*pile_one)->data > data_two)
 		return (0);
-	if ((*pile_one)->next->data > data_two && (*pile_one)->data < (*pile_one)->next->data)
+	if ((*pile_one)->next->data < data_two && (*pile_one)->data < (*pile_one)->next->data)
 		return (0);
-	if ((*pile_one)->next->next->data > data_two && (*pile_one)->data < (*pile_one)->next->next->data)
+	if ((*pile_one)->next->next->data < data_two && (*pile_one)->data < (*pile_one)->next->next->data)
 		return (0);
 	return(1);
 }

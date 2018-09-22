@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:16:00 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/13 15:27:08 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/22 23:28:01 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	print_pile(t_pile *list, char *str)
 	t_pile *tmp;
 	int i;
 
+	ft_printf("PILE %s \n", str);
 	i = 0;
 	tmp = list;
-	ft_printf("PILE %s \n", str);
 	if (tmp == NULL)
 		return;
 	ft_printf("data[%d] = %d | %p\n",i, tmp->data, tmp);
