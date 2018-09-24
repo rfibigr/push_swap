@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 20:26:52 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/23 20:46:02 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/24 12:21:51 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int		main(int ac, char **av)
 	create_pile(&(pile_a), av);
 	if (pile_a->next != NULL)
 		make_operation(&pile_a, &pile_b);
+		//ft_printf("checker executable \n");
 	free_lst(&pile_a);
 	return (0);
 }
