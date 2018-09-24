@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:08:32 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/20 15:03:10 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/24 14:54:03 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		main(int ac, char **av)
 		// test(&pile_a, &pile_b);
 
 	// ft_printf("		END\n--------------------------\n");
-	// print_pile_AB(pile_a, pile_b);
 	free_lst(&pile_a);
 	return (0);
 }

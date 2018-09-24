@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/17 15:10:06 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/24 15:36:57 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	create_pile(t_pile **pile_a, char **av)
 	int		i;
 	t_pile	*tmp;
 
+	//fonction qui prend av en argument et renvoi un int avec un nombre
 	i = 1;
 	while (av[i])
 	{
@@ -41,8 +42,8 @@ void	reorder_lst_order(t_pile *pile_a)
 	t_pile *tmp;
 
 	tmp = pile_a;
-	if (tmp == NULL || tmp->next == NULL)
-		return ;
+//	if (tmp == NULL || tmp->next == NULL)
+//		return ;
 	while(tmp->previous != pile_a)
 	{
 		tmp->previous->next = tmp;
@@ -62,10 +63,6 @@ int		test_param(char *av)
 	i = 0;
 	if (av[i] == '-')
 		i++;
-	//ft_printf("strcmp = %d\n", ft_strcmp(intmax, av) + i);
-	// if (ft_strcmp(intmax, av) + i > 0)
-	//	return (0);
-	// VERIF INT MAX / INT MIN
 	while (av[i])
 	{
 		if (i != 0 && (av[i] < '0' || av[i] > '9'))
@@ -83,15 +80,10 @@ void	add_element(t_pile **begin, char *av)
 /*
 ** OPTIOMISATION Add fonction to create_element and initialise it if begin == null
 */
-	if (!(new_element = (t_pile*)malloc(sizeof(t_pile))))
-		exit_error_malloc(begin);
+	create_element(&new_element, begin);
 	tail = NULL;
 	if (*begin == NULL)
-	{
-		new_element->next = NULL;
-		new_element->previous = NULL;
 		*begin = new_element;
-	}
 	else if ((*begin)->next == NULL)
 	{
 		new_element->next = *begin;
@@ -108,4 +100,12 @@ void	add_element(t_pile **begin, char *av)
 		new_element->previous = tail;
 	}
 	new_element->data = ft_atoi_exit(av, begin);
+}
+
+void	create_element(t_pile **new_element, t_pile **begin)
+{
+	if (!(*new_element = (t_pile*)malloc(sizeof(t_pile))))
+		exit_error_malloc(begin);
+	(*new_element)->next = NULL;
+	(*new_element)->previous = NULL;
 }

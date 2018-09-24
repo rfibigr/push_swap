@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 13:48:19 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/17 14:05:40 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/24 15:35:20 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int		ft_atoi_exit(const char *s, t_pile **begin)
 	{
 		nbr = nbr * 10;
 		nbr = nbr + s[i] - '0';
-		if (nbr > INT_MAX || (nbr > INT_MIN && neg == 1))
+		if (nbr > INT_MAX || (nbr * -1 < INT_MIN))
 		{
 			exit_error_param(begin);
 			ft_printf("exit atoi");

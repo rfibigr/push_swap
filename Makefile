@@ -6,7 +6,7 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/09/24 12:14:54 by rfibigr          ###   ########.fr        #
+#    Updated: 2018/09/24 13:20:16 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -120,6 +120,13 @@ clean :
 	@rm -rf $(OBJ_PATH) 2> /dev/null || true
 	@echo "$(RED) --Cleaning--\t\tlibrary libft"
 	@make clean -C $(LIB_PATH)/libft
+	@echo "$(RED) --Cleaning--\t\tlibrary ft_printf"
+	@make clean -C $(LIB_PATH)/ft_printf
+
+clibft :
+	@echo "$(RED) --Cleaning--\t\tlibrary libft"
+	@make clean -C $(LIB_PATH)/libft
+cprintf :
 	@echo "$(RED) --Cleaning--\t\tlibrary ft_printf"
 	@make clean -C $(LIB_PATH)/ft_printf
 

@@ -6,14 +6,14 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/24 12:20:32 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/24 13:08:47 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-#include "push_swap.h"
+#include "shared.h"
 
 //MAKE OPERATION
 void	make_operation(t_pile **pile_a, t_pile **pile_b);
