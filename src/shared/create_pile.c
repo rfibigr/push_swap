@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 11:38:13 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 17:03:22 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,11 @@
 void	create_pile(t_pile **pile_a, char ***av)
 {
 	t_pile	*tmp;
-	int i = 0;
 
 	*av = *av + 1; // skip program name
 	while (**av)
 	{
-		while (***av != '\0' && i++ < 20)
+		while (***av != '\0')
 		{
 			add_element(pile_a, *av);
 		}
@@ -84,6 +83,7 @@ void	add_element(t_pile **begin, char **av)
 		new_element->previous = tail;
 	}
 	new_element->data = ft_atoi_exit(av, begin);
+
 }
 
 void	create_element(t_pile **new_element, t_pile **begin)

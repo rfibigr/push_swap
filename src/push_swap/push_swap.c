@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:08:32 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 15:29:29 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 16:54:32 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int		main(int ac, char **av)
 		return (1);
 //	print_arg(av);
 	create_pile(&(pile_a), &av);
+	print_pile_AB(pile_a, pile_b);
 	if (!pile_a)
 		return (0);
 	if (pile_a->next != NULL)
