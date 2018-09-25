@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/24 14:35:16 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 13:11:43 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,13 @@ typedef struct		s_pile
 void	print_pile(t_pile *list, char *str);
 void	print_pile_previous(t_pile *list, char *str);
 void	print_pile_AB(t_pile *pile_a, t_pile *pile_b);
+void	print_arg(char **av);
 
 // CREATE PILE
-void	create_pile(t_pile **pile_a, char **av);
-int		test_param(char *av);
+void	create_pile(t_pile **pile_a, char ***av);
+int		test_param(char **av);
 void	create_element(t_pile **new_element, t_pile **begin);
-void	add_element(t_pile **begin, char *av);
+void	add_element(t_pile **begin, char **av);
 void	reorder_lst_order(t_pile *pile_a);
 // MERGE SORT
 void	merge_sort(t_pile **list);
@@ -48,10 +49,13 @@ void	push_back(t_pile **result, t_pile **add);
 //EXIT
 void	exit_error_malloc(t_pile **list);
 void	exit_error_param(t_pile **list);
+void	exit_error_checker(t_pile **list_a, t_pile **list_b);
 void	free_lst(t_pile **list);
 
 //TOOLS
-int		ft_atoi_exit(const char *s, t_pile **begin);
+int		ft_atoi_exit(char **s, t_pile **begin);
+int		is_space(char c);
+int		pile_is_sort(t_pile **pile);
 void	test(t_pile **pile_a, t_pile **pile_b);
 
 

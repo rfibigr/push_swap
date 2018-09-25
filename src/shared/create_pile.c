@@ -6,35 +6,38 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/24 15:36:57 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 11:38:13 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	create_pile(t_pile **pile_a, char **av)
+void	create_pile(t_pile **pile_a, char ***av)
 {
-	int		i;
 	t_pile	*tmp;
+	int i = 0;
 
-	//fonction qui prend av en argument et renvoi un int avec un nombre
-	i = 1;
-	while (av[i])
+	*av = *av + 1; // skip program name
+	while (**av)
 	{
-		if (!(test_param(av[i])))
-			exit_error_param(pile_a);
-		add_element(pile_a, av[i]);
-		i++;
+		while (***av != '\0' && i++ < 20)
+		{
+			add_element(pile_a, *av);
+		}
+		*av = *av + 1;
 	}
 	/*
 	* merge sorting algo with exit condition if duplicate are found
-	* tmp to make the listnull terminated
 	*/
 	tmp = *pile_a;
+	if (!tmp)
+		return ;
 	if (tmp->previous)
+	{
 		tmp->previous->next = NULL;
-	merge_sort(&tmp);
-	reorder_lst_order(*pile_a);
+		merge_sort(&tmp);
+		reorder_lst_order(*pile_a);
+	}
 }
 
 void	reorder_lst_order(t_pile *pile_a)
@@ -42,8 +45,8 @@ void	reorder_lst_order(t_pile *pile_a)
 	t_pile *tmp;
 
 	tmp = pile_a;
-//	if (tmp == NULL || tmp->next == NULL)
-//		return ;
+	if (tmp->previous == NULL)
+		return ;
 	while(tmp->previous != pile_a)
 	{
 		tmp->previous->next = tmp;
@@ -56,30 +59,11 @@ void	reorder_lst_order(t_pile *pile_a)
 ** Test if parameter are number
 ** Add fonction to run ./push_swap 12 "45 65" 34
 */
-int		test_param(char *av)
-{
-	int i;
-
-	i = 0;
-	if (av[i] == '-')
-		i++;
-	while (av[i])
-	{
-		if (i != 0 && (av[i] < '0' || av[i] > '9'))
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-void	add_element(t_pile **begin, char *av)
+void	add_element(t_pile **begin, char **av)
 {
 	t_pile *new_element;
 	t_pile *tail;
 
-/*
-** OPTIOMISATION Add fonction to create_element and initialise it if begin == null
-*/
 	create_element(&new_element, begin);
 	tail = NULL;
 	if (*begin == NULL)

@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/24 13:07:36 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 14:26:33 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 
 //SORT_PILE
 void	sort_pile(t_pile **pile_a, t_pile **pile_b);
-int		pile_is_sort(t_pile **pile);
 void	push_max_decroissant(t_pile **pile_one, t_pile **pile_two, char c);
 void	push_min_croissant(t_pile **pile_one, t_pile **pile_two, char c);
 

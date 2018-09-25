@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:16:00 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/22 23:28:01 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 16:08:24 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,34 @@ void	print_pile_previous(t_pile *list, char *str)
 	if (tmp == NULL)
 		return;
 	// ft_printf("data[%d] = %d\n",i, tmp->data);
-	ft_printf("data[%d] = %p\n",i, tmp);
+	ft_printf("data[%d] = %d | %p\n",i,tmp->data, tmp);
 	i++;
 	tmp = tmp->previous;
 	while (tmp != list && tmp != NULL)
 	{
 		// ft_printf("data[%d] = %d\n",i, tmp->data);
-		ft_printf("data[%d] = %p\n",i, tmp);
+	ft_printf("data[%d] = %d | %p\n",i,tmp->data, tmp);
 		i++;
 		tmp = tmp->previous;
 	}
 	ft_printf("\n");
+}
+
+void	print_arg(char **av)
+{
+	int i;
+	int j;
+
+	i = 0;
+	while (av[i])
+	{
+		j = 0;
+		while (av[i][j])
+		{
+			ft_printf("%c",av[i][j]);
+			j++;
+		}
+		ft_printf("\n");
+		i++;
+	}
 }

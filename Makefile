@@ -6,7 +6,7 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/09/24 13:20:16 by rfibigr          ###   ########.fr        #
+#    Updated: 2018/09/25 12:51:56 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -50,6 +50,10 @@ SRC_PUSH =		push_swap.c \
 
 SRC_CHECKER =	checker.c \
 				make_operation.c \
+				push.c \
+				reverse_rotate.c \
+				rotate.c \
+				swap.c \
 
 SRC_SHARED = 	exit.c \
 				create_pile.c \
@@ -81,9 +85,9 @@ all : push_swap checker
 push_swap : $(OBJ_PUSH_P) $(OBJ_SHARED_P)
 	@echo "$(GREEN) --Compiling--\t\tshared"
 	@echo "$(GREEN) --Compiling--\t\tpush_swap"
-	@echo "$(LOW_GREEN) --library--\t\tlibft"
+	@echo "$(LOW_GREEN) --Compiling lib--\tlibft"
 	@make -C $(LIB_PATH)/libft
-	@echo "$(LOW_GREEN) --library--\t\tft_printf"
+	@echo "$(LOW_GREEN) --Compiling lib--\tft_printf"
 	@make -C $(LIB_PATH)/ft_printf
 	@echo "$(PURPLE) --Linking--\t\tpush_swap"
 	@$(CC) -o $@ $^ $(LIBP)
@@ -91,9 +95,9 @@ push_swap : $(OBJ_PUSH_P) $(OBJ_SHARED_P)
 checker : $(OBJ_CHECKER_P) $(OBJ_SHARED_P)
 	@echo "$(GREEN) --Compiling--\t\tchecker"
 ifneq (,$(filter checker ,$(MAKECMDGOALS)))
-	@echo "$(LOW_GREEN) --library--\t\tlibft"
+	@echo "$(LOW_GREEN) --Compiling lib--\tlibft"
 	@make -C $(LIB_PATH)/libft
-	@echo "$(LOW_GREEN) --library--\t\tft_printf"
+	@echo "$(LOW_GREEN) --Compiling lib--\tft_printf"
 	@make -C $(LIB_PATH)/ft_printf
 endif
 	@echo "$(PURPLE) --Linking--\t\tchecker"
@@ -137,7 +141,25 @@ fclean : clean
 
 re: fclean all
 
-debug : $(OBJP)
-	make -C $(LIB_PATH)/libft
-	make clean -C $(LIB_PATH)/ft_printf
-	$(CC) -g3 -fsanitize=address $^ $(LIBP) -o $(NAME)
+debug : push_swap_debug checker_debug
+
+push_swap_debug : $(OBJ_PUSH_P) $(OBJ_SHARED_P)
+	@echo "$(GREEN) --Compiling--\t\tshared"
+	@echo "$(GREEN) --Compiling--\t\tpush_swap"
+	@echo "$(LOW_GREEN) --Compiling library--\t\tlibft"
+	@make -C $(LIB_PATH)/libft
+	@echo "$(LOW_GREEN) --Compiling library--\t\tft_printf"
+	@make -C $(LIB_PATH)/ft_printf
+	@echo "$(PURPLE) --Linking--\t\tpush_swap"
+	@$(CC) -g3 -fsanitize=address -o $@ $^ $(LIBP)
+
+checker_debug : $(OBJ_CHECKER_P) $(OBJ_SHARED_P)
+	@echo "$(GREEN) --Compiling--\t\tchecker"
+ifneq (,$(filter checker ,$(MAKECMDGOALS)))
+	@echo "$(LOW_GREEN) --library--\t\tlibft"
+	@make -C $(LIB_PATH)/libft
+	@echo "$(LOW_GREEN) --library--\t\tft_printf"
+	@make -C $(LIB_PATH)/ft_printf
+endif
+	@echo "$(PURPLE) --Linking--\t\tchecker"
+	@$(CC) -g3 -fsanitize=address -o $@ $^ $(LIBP)

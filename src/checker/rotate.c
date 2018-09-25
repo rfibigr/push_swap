@@ -1,35 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/05 16:08:32 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 15:29:29 by rfibigr          ###   ########.fr       */
+/*   Created: 2018/09/07 18:49:51 by rfibigr           #+#    #+#             */
+/*   Updated: 2018/09/25 16:34:54 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-int		main(int ac, char **av)
+void	op_ra(t_pile **pile_a, t_pile **pile_b)
 {
-	t_pile *pile_a;
-	t_pile *pile_b;
+	(void)pile_b;
 
-	(void)ac;
-	pile_b = NULL;
-	pile_a = NULL;
-	if (ac < 2)
-		return (1);
-//	print_arg(av);
-	create_pile(&(pile_a), &av);
-	if (!pile_a)
-		return (0);
-	if (pile_a->next != NULL)
-		sort_pile(&pile_a, &pile_b);
-		// test(&pile_a, &pile_b);
-	// ft_printf("		END\n--------------------------\n");
-	free_lst(&pile_a);
-	return (0);
+	if (*pile_a)
+		*pile_a = (*pile_a)->next;
+}
+
+void	op_rb(t_pile **pile_a, t_pile **pile_b)
+{
+	(void)pile_a;
+
+	if (*pile_b)
+		*pile_b = (*pile_b)->next;
+}
+
+void	op_rr(t_pile **pile_a, t_pile **pile_b)
+{
+	if (*pile_a)
+		*pile_a = (*pile_a)->next;
+	if (*pile_b)
+		*pile_b = (*pile_b)->next;
 }

@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:31:35 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/20 10:48:38 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 15:34:12 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,16 @@ void	exit_error_malloc(t_pile **list)
 	exit(1);
 }
 
+void	exit_error_checker(t_pile **list_a, t_pile **list_b)
+{
+	write(1, "Error\n", 6);
+	if (list_a != NULL)
+		free_lst(list_a);
+	if (list_b != NULL)
+		free_lst(list_b);
+	exit(1);
+}
+
 void	free_lst(t_pile **list)
 {
 	t_pile *tmp;
@@ -42,9 +52,9 @@ void	free_lst(t_pile **list)
 	{
 		tmp = *list;
 		*list = (*list)->previous;
-		// ft_printf("free %p\n", tmp);
+		//ft_printf("free %p\n", tmp);
 		free(tmp);
 	}
-	// ft_printf("free %p\n", *list);
+	//ft_printf("free %p\n", *list);
 	free(*list);
 }
