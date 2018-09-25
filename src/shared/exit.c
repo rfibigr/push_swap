@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:31:35 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 15:34:12 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 16:38:26 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ void	free_lst(t_pile **list)
 	t_pile *tmp;
 	t_pile *start;
 
+	if (!*list)
+		return ;
 	start = *list;
 	tmp = *list;
 	while ((*list)->previous != start && (*list)->previous != NULL)
