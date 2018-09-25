@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 17:03:22 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 17:40:53 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	create_pile(t_pile **pile_a, char ***av)
 {
 	t_pile	*tmp;
 
-	*av = *av + 1; // skip program name
+	*av = *av + 1;
 	while (**av)
 	{
 		while (***av != '\0')
@@ -25,9 +25,6 @@ void	create_pile(t_pile **pile_a, char ***av)
 		}
 		*av = *av + 1;
 	}
-	/*
-	* merge sorting algo with exit condition if duplicate are found
-	*/
 	tmp = *pile_a;
 	if (!tmp)
 		return ;
@@ -46,7 +43,7 @@ void	reorder_lst_order(t_pile *pile_a)
 	tmp = pile_a;
 	if (tmp->previous == NULL)
 		return ;
-	while(tmp->previous != pile_a)
+	while (tmp->previous != pile_a)
 	{
 		tmp->previous->next = tmp;
 		tmp = tmp->previous;
@@ -54,10 +51,6 @@ void	reorder_lst_order(t_pile *pile_a)
 	tmp->previous->next = tmp;
 }
 
-/*
-** Test if parameter are number
-** Add fonction to run ./push_swap 12 "45 65" 34
-*/
 void	add_element(t_pile **begin, char **av)
 {
 	t_pile *new_element;
@@ -83,7 +76,6 @@ void	add_element(t_pile **begin, char **av)
 		new_element->previous = tail;
 	}
 	new_element->data = ft_atoi_exit(av, begin);
-
 }
 
 void	create_element(t_pile **new_element, t_pile **begin)

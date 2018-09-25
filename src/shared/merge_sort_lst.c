@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/12 10:40:22 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 10:56:17 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 17:41:40 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ void	push_back(t_pile **result, t_pile **add)
 	t_pile *tmp;
 
 	tmp = *result;
-	/* isolation of the first node of add in the pointeur tmp */
 	elem_to_add = *add;
 	*add = (*add)->next;
 	elem_to_add->next = NULL;

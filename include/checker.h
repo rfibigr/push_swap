@@ -6,14 +6,14 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 16:30:13 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 17:52:13 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CHECKER_H
 # define CHECKER_H
 
-#include "shared.h"
+# include "shared.h"
 
 enum				e_op
 {
@@ -32,11 +32,15 @@ enum				e_op
 
 typedef	void		(*t_make)(t_pile **, t_pile **);
 
-//MAKE OPERATION
+/*
+** MAKE OPERATION
+*/
 void	make_operation(t_pile **pile_a, t_pile **pile_b);
 int		calcul_operation(char *str_operation, int *operation);
 
-//OPERATION
+/*
+** OPERATION
+*/
 void	op_pa(t_pile **pile_a, t_pile **pile_b);
 void	op_pb(t_pile **pile_a, t_pile **pile_b);
 void	op_rrr(t_pile **pile_a, t_pile **pile_b);
@@ -48,9 +52,5 @@ void	op_rb(t_pile **pile_a, t_pile **pile_b);
 void	op_sa(t_pile **pile_a, t_pile **pile_b);
 void	op_sb(t_pile **pile_a, t_pile **pile_b);
 void	op_ss(t_pile **pile_a, t_pile **pile_b);
-
-//EXIT
-void	free_lst_checker(t_pile **list);
-void 	test_op(t_pile **pile_a, t_pile **pile_b);
 
 #endif

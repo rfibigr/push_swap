@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/17 13:48:19 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 17:01:34 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 17:49:40 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		ft_atoi_exit(char **s, t_pile **begin)
 {
 	long long	nbr;
-	int neg;
+	int			neg;
 
 	neg = 0;
 	nbr = 0;
@@ -37,7 +37,6 @@ int		ft_atoi_exit(char **s, t_pile **begin)
 		*s = *s + 1;
 	if (neg == 1)
 		nbr = -nbr;
-	ft_printf("new_element->data=%d\n", nbr);
 	return (nbr);
 }
 
@@ -51,16 +50,16 @@ int		is_space(char c)
 
 int		pile_is_sort(t_pile **pile)
 {
-	t_pile *tmp;
+	t_pile	*tmp;
 	int		last;
 
 	tmp = (*pile)->next;
 	last = (*pile)->data;
-	while(tmp != *pile && tmp != NULL)
+	while (tmp != *pile && tmp != NULL)
 	{
 		if (last > tmp->data)
 			return (0);
-		last = tmp ->data;
+		last = tmp->data;
 		tmp = tmp->next;
 	}
 	return (1);

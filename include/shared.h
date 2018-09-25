@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 13:11:43 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 17:59:27 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 # include <stdlib.h>
 # include <limits.h>
 
-// STRUCTURE
+/*
+** STRUCTURE
+*/
 typedef struct		s_pile
 {
 	int				data;
@@ -28,35 +30,42 @@ typedef struct		s_pile
 	struct s_pile	*previous;
 }					t_pile;
 
-// TOOLS
-void	print_pile(t_pile *list, char *str);
-void	print_pile_previous(t_pile *list, char *str);
-void	print_pile_AB(t_pile *pile_a, t_pile *pile_b);
-void	print_arg(char **av);
+/*
+** TOOLS
+*/
+void				print_pile(t_pile *list, char *str);
+void				print_pile_previous(t_pile *list, char *str);
+void				print_pile_ab(t_pile *pile_a, t_pile *pile_b);
 
-// CREATE PILE
-void	create_pile(t_pile **pile_a, char ***av);
-int		test_param(char **av);
-void	create_element(t_pile **new_element, t_pile **begin);
-void	add_element(t_pile **begin, char **av);
-void	reorder_lst_order(t_pile *pile_a);
-// MERGE SORT
-void	merge_sort(t_pile **list);
-void	merge(t_pile **list, t_pile *left, t_pile *right);
-void	split_chain(t_pile *begin, t_pile **left, t_pile **right);
-void	push_back(t_pile **result, t_pile **add);
+/*
+** CREATE PILE
+*/
+void				create_pile(t_pile **pile_a, char ***av);
+int					test_param(char **av);
+void				create_element(t_pile **new_element, t_pile **begin);
+void				add_element(t_pile **begin, char **av);
+void				reorder_lst_order(t_pile *pile_a);
+/*
+** MERGE SORT
+*/
+void				merge_sort(t_pile **list);
+void				merge(t_pile **list, t_pile *left, t_pile *right);
+void				split_chain(t_pile *begin, t_pile **left, t_pile **right);
+void				push_back(t_pile **result, t_pile **add);
 
-//EXIT
-void	exit_error_malloc(t_pile **list);
-void	exit_error_param(t_pile **list);
-void	exit_error_checker(t_pile **list_a, t_pile **list_b);
-void	free_lst(t_pile **list);
+/*
+** EXIT
+*/
+void				exit_error_malloc(t_pile **list);
+void				exit_error_param(t_pile **list);
+void				exit_error_checker(t_pile **list_a, t_pile **list_b);
+void				free_lst(t_pile **list);
 
-//TOOLS
-int		ft_atoi_exit(char **s, t_pile **begin);
-int		is_space(char c);
-int		pile_is_sort(t_pile **pile);
-void	test(t_pile **pile_a, t_pile **pile_b);
-
+/*
+** TOOLS
+*/
+int					ft_atoi_exit(char **s, t_pile **begin);
+int					is_space(char c);
+int					pile_is_sort(t_pile **pile);
 
 #endif

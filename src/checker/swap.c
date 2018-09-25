@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 18:49:51 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 16:48:13 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 17:34:35 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 void	op_sa(t_pile **pile_a, t_pile **pile_b)
 {
 	int tmp;
-	(void)pile_b;
 
+	(void)pile_b;
 	if (*pile_a)
 	{
 		tmp = (*pile_a)->data;
@@ -28,8 +28,8 @@ void	op_sa(t_pile **pile_a, t_pile **pile_b)
 void	op_sb(t_pile **pile_a, t_pile **pile_b)
 {
 	int tmp;
-	(void)pile_a;
 
+	(void)pile_a;
 	if (*pile_b)
 	{
 		tmp = (*pile_b)->data;

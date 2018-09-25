@@ -6,37 +6,35 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:16:00 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 16:08:24 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/25 17:48:38 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap.h"
 
-void	print_pile_AB(t_pile *pile_a, t_pile *pile_b)
+void	print_pile_ab(t_pile *pile_a, t_pile *pile_b)
 {
 	print_pile(pile_a, "A");
 	print_pile(pile_b, "B");
 	ft_printf("\n-----------------------------------\n");
-
 }
 
 void	print_pile(t_pile *list, char *str)
 {
-	t_pile *tmp;
-	int i;
+	t_pile	*tmp;
+	int		i;
 
 	ft_printf("PILE %s \n", str);
 	i = 0;
 	tmp = list;
 	if (tmp == NULL)
-		return;
-	ft_printf("data[%d] = %d | %p\n",i, tmp->data, tmp);
+		return ;
+	ft_printf("data[%d] = %d | %p\n", i, tmp->data, tmp);
 	i++;
 	tmp = tmp->next;
 	while (tmp != list && tmp != NULL)
 	{
-		ft_printf("data[%d] = %d | %p\n",i, tmp->data, tmp);
+		ft_printf("data[%d] = %d | %p\n", i, tmp->data, tmp);
 		i++;
 		tmp = tmp->next;
 	}
@@ -45,43 +43,22 @@ void	print_pile(t_pile *list, char *str)
 
 void	print_pile_previous(t_pile *list, char *str)
 {
-	t_pile *tmp;
-	int i;
+	t_pile	*tmp;
+	int		i;
 
 	i = 0;
 	tmp = list;
 	ft_printf("PILE %s \n", str);
 	if (tmp == NULL)
-		return;
-	// ft_printf("data[%d] = %d\n",i, tmp->data);
-	ft_printf("data[%d] = %d | %p\n",i,tmp->data, tmp);
+		return ;
+	ft_printf("data[%d] = %d | %p\n", i, tmp->data, tmp);
 	i++;
 	tmp = tmp->previous;
 	while (tmp != list && tmp != NULL)
 	{
-		// ft_printf("data[%d] = %d\n",i, tmp->data);
-	ft_printf("data[%d] = %d | %p\n",i,tmp->data, tmp);
+		ft_printf("data[%d] = %d | %p\n", i, tmp->data, tmp);
 		i++;
 		tmp = tmp->previous;
 	}
 	ft_printf("\n");
-}
-
-void	print_arg(char **av)
-{
-	int i;
-	int j;
-
-	i = 0;
-	while (av[i])
-	{
-		j = 0;
-		while (av[i][j])
-		{
-			ft_printf("%c",av[i][j]);
-			j++;
-		}
-		ft_printf("\n");
-		i++;
-	}
 }
