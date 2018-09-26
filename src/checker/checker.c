@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 20:26:52 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 16:38:30 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/26 18:21:37 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int		main(int ac, char **av)
 	t_pile *pile_a;
 	t_pile *pile_b;
 
-	(void)ac;
+	if (ac == 1)
+		return (0);
+	check_argument(ac, av);
 	pile_b = NULL;
 	pile_a = NULL;
 	create_pile(&(pile_a), &av);

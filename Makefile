@@ -6,7 +6,7 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/09/25 12:51:56 by rfibigr          ###   ########.fr        #
+#    Updated: 2018/09/26 19:02:54 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -39,6 +39,7 @@ LIB_PATH =	lib
 #/******************* COMPILATION *******************/
 CC =			gcc
 CFLAGS =		-Wall -Werror -Wextra
+FRAMEWORK = 	-framework OpenGL -framework AppKit
 
 #/********************** BINARY *********************/
 NAME = push_swap checker
@@ -49,11 +50,16 @@ SRC_PUSH =		push_swap.c \
 				sort_pile_condition.c \
 
 SRC_CHECKER =	checker.c \
+				checker_bonus.c \
 				make_operation.c \
 				push.c \
 				reverse_rotate.c \
 				rotate.c \
 				swap.c \
+				ft_event.c \
+				calcul_image.c \
+				tools_checker.c \
+				initialise_image.c \
 
 SRC_SHARED = 	exit.c \
 				create_pile.c \
@@ -67,7 +73,8 @@ OBJ_CHECKER =		$(SRC_CHECKER:.c=.o)
 OBJ_SHARED  =		$(SRC_SHARED:.c=.o)
 
 LIBNAME =	libft/libft.a \
-			ft_printf/libftprintf.a
+			ft_printf/libftprintf.a \
+			minilibx_macos/libmlx.a \
 
 #/********************** PATH  *********************/
 INCP =		$(foreach dir, $(INC_PATH), -I$(dir))
@@ -100,8 +107,10 @@ ifneq (,$(filter checker ,$(MAKECMDGOALS)))
 	@echo "$(LOW_GREEN) --Compiling lib--\tft_printf"
 	@make -C $(LIB_PATH)/ft_printf
 endif
+	@echo "$(LOW_GREEN) --Compiling lib--\tminilibix"
+	@make -C $(LIB_PATH)/minilibx_macos
 	@echo "$(PURPLE) --Linking--\t\tchecker"
-	@$(CC) -o $@ $^ $(LIBP)
+	@$(CC) -o $@ $^ $(LIBP) $(FRAMEWORK)
 
 $(OBJ_PATH_PUSH)/%.o: $(SRC_PATH_PUSH)/%.c
 	@mkdir $(OBJ_PATH) 2> /dev/null || true
