@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 19:24:47 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 17:40:53 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/26 10:54:55 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	create_pile(t_pile **pile_a, char ***av)
 	*av = *av + 1;
 	while (**av)
 	{
-		while (***av != '\0')
+		while (***av)
 		{
 			add_element(pile_a, *av);
 		}

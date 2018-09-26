@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:08:38 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/25 17:35:45 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/26 12:02:38 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,83 +32,83 @@ void	sort_pile(t_pile **pile_a, t_pile **pile_b)
 void	push_max_decroissant(t_pile **pile_one, t_pile **pile_two, char c)
 {
 	if (*pile_one == NULL)
-		return;
+		return ;
 	if (*pile_two == NULL)
-	{
-		if ((*pile_one)->previous->data > (*pile_one)->data && (*pile_one)->previous->data > (*pile_one)->next->data)
-		{
-			reverse_rotate(pile_one, c);
-			push(pile_one, pile_two, c);
-		}
-		else if ((*pile_one)->data > (*pile_one)->next->data)
-			push(pile_one, pile_two, c);
-		else
-		{
-			swap(pile_one, c);
-			push(pile_one, pile_two, c);
-		}
-	}
+		initial_pile_max(pile_one, pile_two, c);
 	while (*pile_one != NULL)
 	{
-		// ft_printf("BOUCLE PUSH MAX DECROISSANT\n");
-		// print_pile_AB(*pile_one, *pile_two);
-		if(test_previous_max(&(*pile_one)->previous, (*pile_two)->data))
+		if (test_previous_max(&(*pile_one)->previous, (*pile_two)->data))
 		{
 			reverse_rotate(pile_one, c);
 			push(pile_one, pile_two, c);
 		}
-		else if(test_top_max(pile_one, (*pile_two)->data))
-		{
+		else if (test_top_max(pile_one, (*pile_two)->data))
 			push(pile_one, pile_two, c);
-		}
-		else if((*pile_one)->next->data < (*pile_two)->data)
-		{
-			swap(pile_one, c);
-			push(pile_one, pile_two, c);
-		}
-		 else
-			return;
-	}
-}
-
-void	push_min_croissant(t_pile **pile_one, t_pile **pile_two, char c)
-{
-	if (*pile_one == NULL)
-		return;
-	if (*pile_two == NULL)
-	{
-		if ((*pile_one)->previous->data < (*pile_one)->data && (*pile_one)->previous->data < (*pile_one)->next->data)
-		{
-			reverse_rotate(pile_one, c);
-			push(pile_one, pile_two, c);
-		}
-		else if ((*pile_one)->data < (*pile_one)->next->data)
-			push(pile_one, pile_two, c);
-		else
-		{
-			swap(pile_one, c);
-			push(pile_one, pile_two, c);
-		}
-	}
-	while (*pile_one != NULL)
-	{
-		// ft_printf("BOUCLE PUSH MIN CROISSANT\n");
-		// print_pile_AB(*pile_one, *pile_two);
-		if(test_previous_min((*pile_one)->previous, (*pile_two)->data))
-		{
-			reverse_rotate(pile_one, c);
-			push(pile_one, pile_two, c);
-		}
-		else if(test_top_min(*pile_one, (*pile_two)->data))
-		{
-			push(pile_one, pile_two, c);
-		}
-		else if((*pile_one)->next->data > (*pile_two)->data)
+		else if ((*pile_one)->next->data < (*pile_two)->data)
 		{
 			swap(pile_one, c);
 			push(pile_one, pile_two, c);
 		}
 		else
 			return ;
+	}
+}
+
+void	push_min_croissant(t_pile **pile_one, t_pile **pile_two, char c)
+{
+	if (*pile_one == NULL)
+		return ;
+	if (*pile_two == NULL)
+		initial_pile_min(pile_one, pile_two, c);
+	while (*pile_one != NULL)
+	{
+		if (test_previous_min((*pile_one)->previous, (*pile_two)->data))
+		{
+			reverse_rotate(pile_one, c);
+			push(pile_one, pile_two, c);
+		}
+		else if (test_top_min(*pile_one, (*pile_two)->data))
+			push(pile_one, pile_two, c);
+		else if ((*pile_one)->next->data > (*pile_two)->data)
+		{
+			swap(pile_one, c);
+			push(pile_one, pile_two, c);
+		}
+		else
+			return ;
+	}
+}
+
+void	initial_pile_min(t_pile **pile_one, t_pile **pile_two, char c)
+{
+	if ((*pile_one)->previous->data < (*pile_one)->data
+					&& (*pile_one)->previous->data < (*pile_one)->next->data)
+	{
+		reverse_rotate(pile_one, c);
+		push(pile_one, pile_two, c);
+	}
+	else if ((*pile_one)->data < (*pile_one)->next->data)
+		push(pile_one, pile_two, c);
+	else
+	{
+		swap(pile_one, c);
+		push(pile_one, pile_two, c);
+	}
+}
+
+void	initial_pile_max(t_pile **pile_one, t_pile **pile_two, char c)
+{
+	if ((*pile_one)->previous->data > (*pile_one)->data
+					&& (*pile_one)->previous->data > (*pile_one)->next->data)
+	{
+		reverse_rotate(pile_one, c);
+		push(pile_one, pile_two, c);
+	}
+	else if ((*pile_one)->data > (*pile_one)->next->data)
+		push(pile_one, pile_two, c);
+	else
+	{
+		swap(pile_one, c);
+		push(pile_one, pile_two, c);
 	}
 }
