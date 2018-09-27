@@ -6,7 +6,7 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/09/26 19:02:54 by rfibigr          ###   ########.fr        #
+#    Updated: 2018/09/27 09:52:30 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -52,6 +52,7 @@ SRC_PUSH =		push_swap.c \
 SRC_CHECKER =	checker.c \
 				checker_bonus.c \
 				make_operation.c \
+				make_operation_visual.c \
 				push.c \
 				reverse_rotate.c \
 				rotate.c \

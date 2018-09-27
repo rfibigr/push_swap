@@ -6,21 +6,28 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 20:08:46 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/26 14:49:59 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/27 17:11:14 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int		key_hook(int key, void *param)
+int			key_hook(int key, t_loop *loop)
 {
-	ft_printf("key = %d", key);
-
+	if (key == 123)
+	{
+		loop->speed++;
+	}
+	if (key == 124)
+	{
+		if (loop->speed != 0)
+			loop->speed--;
+	}
 	if (key == 53)
 	{
-		ft_printf("EHHH\n");
-		free_lst(param);
+		free_lst(&loop->pile_a);
+		free_lst(&loop->pile_b);
 		exit (0);
 	}
-	return (1);
+	return(0);
 }

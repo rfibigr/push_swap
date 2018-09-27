@@ -6,75 +6,85 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 16:22:29 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/26 19:34:10 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/27 17:40:58 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	calcul_image(t_mlx *mlx, t_pile *pile_a, t_pile *pile_b)
-{
-	t_coord coord;
-	trace_border(mlx);
-	coord = define_x_y_ratio(pile_a);
-	add_pile_image(pile_a, pile_b, coord, mlx);
-}
-
 t_coord define_x_y_ratio(t_pile *list_a)
 {
 	t_pile	*tmp;
 	t_coord	coord;
-	int		len_pile;
-	int		max_value;
 
 	tmp = list_a->next;
-	max_value = v_abs(list_a->data);
-	len_pile = 1;
+	coord.min = list_a->data;
+	coord.max = list_a->data;
+	coord.len_pile = 1;
 	while (tmp != list_a)
 	{
-		if (v_abs(tmp->data) > max_value)
-			max_value = tmp->data;
+		if (tmp->data < coord.min)
+			coord.min = tmp->data;
+		if (tmp->data > coord.max)
+			coord.max = tmp->data;
 		tmp = tmp->next;
-		len_pile++;
+		coord.len_pile++;
 	}
-	coord.y = (IMG_Y - 1) / (len_pile);
-	coord.x = ((IMG_X / 4) / max_value);
+	coord.y = (IMG_Y - 1) / (coord.len_pile);
+	if (v_abs(coord.max) > v_abs(coord.min))
+		coord.x = ((IMG_X / 4) / v_abs(coord.max));
+	else
+		coord.x = ((IMG_X / 4) / v_abs(coord.min));
 	return (coord);
 }
 
-void	add_pile_image(t_pile *pile_a, t_pile *pile_b, t_coord coord, t_mlx *mlx)
+void	draw_pile_image(t_pile *pile_a, t_pile *pile_b, t_coord coord, t_mlx *mlx)
 {
-	(void)pile_b;
+	ft_bzero(mlx->str, (IMG_X * IMG_Y) * 4);
+	trace_border(mlx);
+	add_pile(pile_a, coord, mlx, 1);
+	add_pile(pile_b, coord, mlx, 3);
+	mlx_put_image_to_window(mlx->init, mlx->name, mlx->image, 0, 100);
+}
+
+void	add_pile(t_pile *pile, t_coord coord, t_mlx *mlx, int side_screen)
+{
 	t_pile	*tmp;
 	int		y;
 	int		nbr_elem;
+	int		color;
 
-	y = 0;
+	if (!pile)
+		return ;
+	y = 1;
 	nbr_elem = 1;
-	tmp = pile_a;
+	tmp = pile;
+	color = color_element(tmp->data, coord);
 		while (y < (coord.y * nbr_elem))
 		{
-			fill_line(&mlx->str, (IMG_X / 4), y, 0xffffff, (tmp->data * coord.x));
-			y++;
+			fill_line(&mlx->str, (IMG_X / 4) * side_screen, y++, color, (tmp->data * coord.x));
 		}
 		nbr_elem++;
 		tmp = tmp->next;
-	while (tmp != pile_a)
+	while (tmp != pile)
 	{
+	color = color_element(tmp->data, coord);
 		while (y < (coord.y * nbr_elem))
-		{
-			fill_line(&mlx->str, (IMG_X / 4), y, 0xffffff, (tmp->data * coord.x));
-			y++;
-		}
+			fill_line(&mlx->str, (IMG_X / 4) * side_screen, y++, color, (tmp->data * coord.x));
 		nbr_elem++;
 		tmp = tmp->next;
 	}
 }
 
-//calcul du nombre d'element de la liste et valeur absolue max en (min et max)
+int		color_element(int data, t_coord coord)
+{
+	int color;
+	(void)coord;
+	(void)data;
+	if (data < 0)
+		color = 0xfff000;
+	else
+		color = 0x000fff;
 
-// on en deduit la taille y de chaue element en y
-// et le ratio de chaque element en x
-//pour chaque element de la liste on ajoutes les pixel x et y;
-
-// apres chaque operation on recalcul le chaque element
+	return(color);
+}

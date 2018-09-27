@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 20:26:52 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/26 18:21:37 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/27 11:29:40 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,7 @@ int		main(int ac, char **av)
 		return (0);
 	if (pile_a->next != NULL)
 		make_operation(&pile_a, &pile_b);
-	if (pile_is_sort(&pile_a) == 1 && pile_b == NULL)
-		ft_printf("OK\n");
-	else
-	{
-		ft_printf("KO\n");
-		free_lst(&pile_b);
-	}
+	print_result(&pile_a, &pile_b);
 	free_lst(&pile_a);
 	return (0);
 }
