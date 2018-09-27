@@ -6,13 +6,13 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 16:22:29 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/27 17:40:58 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/27 19:15:46 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-t_coord define_x_y_ratio(t_pile *list_a)
+t_coord	define_x_y_ratio(t_pile *list_a)
 {
 	t_pile	*tmp;
 	t_coord	coord;
@@ -38,7 +38,8 @@ t_coord define_x_y_ratio(t_pile *list_a)
 	return (coord);
 }
 
-void	draw_pile_image(t_pile *pile_a, t_pile *pile_b, t_coord coord, t_mlx *mlx)
+void	draw_pile_image(t_pile *pile_a, t_pile *pile_b,
+													t_coord coord, t_mlx *mlx)
 {
 	ft_bzero(mlx->str, (IMG_X * IMG_Y) * 4);
 	trace_border(mlx);
@@ -52,39 +53,34 @@ void	add_pile(t_pile *pile, t_coord coord, t_mlx *mlx, int side_screen)
 	t_pile	*tmp;
 	int		y;
 	int		nbr_elem;
-	int		color;
 
 	if (!pile)
 		return ;
 	y = 1;
 	nbr_elem = 1;
 	tmp = pile;
-	color = color_element(tmp->data, coord);
-		while (y < (coord.y * nbr_elem))
-		{
-			fill_line(&mlx->str, (IMG_X / 4) * side_screen, y++, color, (tmp->data * coord.x));
-		}
-		nbr_elem++;
-		tmp = tmp->next;
+	while (y < (coord.y * nbr_elem))
+		fill_line(&mlx->str, (IMG_X / 4) * side_screen, y++,
+													(tmp->data * coord.x));
+	nbr_elem++;
+	tmp = tmp->next;
 	while (tmp != pile)
 	{
-	color = color_element(tmp->data, coord);
 		while (y < (coord.y * nbr_elem))
-			fill_line(&mlx->str, (IMG_X / 4) * side_screen, y++, color, (tmp->data * coord.x));
+			fill_line(&mlx->str, (IMG_X / 4) * side_screen, y++,
+													(tmp->data * coord.x));
 		nbr_elem++;
 		tmp = tmp->next;
 	}
 }
 
-int		color_element(int data, t_coord coord)
+int		color_element(int len)
 {
 	int color;
-	(void)coord;
-	(void)data;
-	if (data < 0)
+
+	if (len < 0)
 		color = 0xfff000;
 	else
 		color = 0x000fff;
-
-	return(color);
+	return (color);
 }

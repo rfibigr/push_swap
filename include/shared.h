@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/27 15:07:19 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/27 19:30:59 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,5 @@ void				free_lst(t_pile **list);
 int					ft_atoi_exit(char **s, t_pile **begin);
 void				skip_space(char **s);
 int					pile_is_sort(t_pile **pile);
-
 
 #endif

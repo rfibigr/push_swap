@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:08:38 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/27 17:53:58 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/27 18:48:13 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,21 @@
 
 int		make_operation_visual(t_loop *loop)
 {
-	usleep(1000 * (30 * loop->speed));
-	make_instruction(loop);
-	draw_pile_image(loop->pile_a, loop->pile_b, loop->coord, loop->mlx);
-	return(1);
-}
-
-void	make_instruction(t_loop *loop)
-{
 	char	*str_operation;
 	int		operation;
+
+	operation = 0;
+	str_operation = NULL;
+	usleep(1000 * (30 * loop->speed));
+	make_instruction(loop, str_operation, operation);
+	draw_pile_image(loop->pile_a, loop->pile_b, loop->coord, loop->mlx);
+	return (1);
+}
+
+void	make_instruction(t_loop *loop, char *str_operation, int operation)
+{
 	t_make	make[11];
 
-	str_operation = NULL;
 	make[e_op_sa] = op_sa;
 	make[e_op_sb] = op_sb;
 	make[e_op_ss] = op_ss;
@@ -47,5 +49,6 @@ void	make_instruction(t_loop *loop)
 		ft_strdel(&str_operation);
 	}
 	else
-		print_result(&loop->pile_a, &loop->pile_b, loop->mlx, loop->iteration);
+		print_result_visualizer(&loop->pile_a, &loop->pile_b,
+												loop->mlx, loop->iteration);
 }

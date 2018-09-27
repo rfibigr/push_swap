@@ -6,7 +6,7 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/09/27 09:52:30 by rfibigr          ###   ########.fr        #
+#    Updated: 2018/09/27 18:22:39 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -97,6 +97,8 @@ push_swap : $(OBJ_PUSH_P) $(OBJ_SHARED_P)
 	@make -C $(LIB_PATH)/libft
 	@echo "$(LOW_GREEN) --Compiling lib--\tft_printf"
 	@make -C $(LIB_PATH)/ft_printf
+	@echo "$(LOW_GREEN) --Compiling lib--\tminilibix"
+	@make -C $(LIB_PATH)/minilibx_macos
 	@echo "$(PURPLE) --Linking--\t\tpush_swap"
 	@$(CC) -o $@ $^ $(LIBP)
 
@@ -136,6 +138,8 @@ clean :
 	@make clean -C $(LIB_PATH)/libft
 	@echo "$(RED) --Cleaning--\t\tlibrary ft_printf"
 	@make clean -C $(LIB_PATH)/ft_printf
+	@echo "$(RED) --Cleaning--\t\tlibrary minilibx"
+	@make clean -C $(LIB_PATH)/minilibx_macos
 
 clibft :
 	@echo "$(RED) --Cleaning--\t\tlibrary libft"
@@ -148,28 +152,6 @@ fclean : clean
 	@echo "$(RED) --Cleaning--\t\texecutable"
 	@rm -rf $(NAME)
 	@make fclean -C $(LIB_PATH)/libft
+	@make fclean -C $(LIB_PATH)/ft_printf
 
 re: fclean all
-
-debug : push_swap_debug checker_debug
-
-push_swap_debug : $(OBJ_PUSH_P) $(OBJ_SHARED_P)
-	@echo "$(GREEN) --Compiling--\t\tshared"
-	@echo "$(GREEN) --Compiling--\t\tpush_swap"
-	@echo "$(LOW_GREEN) --Compiling library--\t\tlibft"
-	@make -C $(LIB_PATH)/libft
-	@echo "$(LOW_GREEN) --Compiling library--\t\tft_printf"
-	@make -C $(LIB_PATH)/ft_printf
-	@echo "$(PURPLE) --Linking--\t\tpush_swap"
-	@$(CC) -g3 -fsanitize=address -o $@ $^ $(LIBP)
-
-checker_debug : $(OBJ_CHECKER_P) $(OBJ_SHARED_P)
-	@echo "$(GREEN) --Compiling--\t\tchecker"
-ifneq (,$(filter checker ,$(MAKECMDGOALS)))
-	@echo "$(LOW_GREEN) --library--\t\tlibft"
-	@make -C $(LIB_PATH)/libft
-	@echo "$(LOW_GREEN) --library--\t\tft_printf"
-	@make -C $(LIB_PATH)/ft_printf
-endif
-	@echo "$(PURPLE) --Linking--\t\tchecker"
-	@$(CC) -g3 -fsanitize=address -o $@ $^ $(LIBP)

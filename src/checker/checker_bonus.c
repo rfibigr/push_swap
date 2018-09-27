@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 20:26:52 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/27 18:09:14 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/27 19:15:13 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	check_argument(int ac, char **av)
 	if (ft_strcmp(av[1], "-v\0"))
 		return ;
 	else
-		main_visualizer(ac,av);
+		main_visualizer(ac, av);
 }
 
 int		main_visualizer(int ac, char **av)
@@ -29,10 +29,11 @@ int		main_visualizer(int ac, char **av)
 	t_loop	*loop;
 
 	if (ac == 2)
-		exit (0);
+		exit(0);
 	mlx = ft_initialise();
 	mlx.image = mlx_new_image(mlx.init, IMG_X, IMG_Y);
-	mlx.str = mlx_get_data_addr(mlx.image, &mlx.bpp, &mlx.size_line, &mlx.endian);
+	mlx.str = mlx_get_data_addr(mlx.image, &mlx.bpp,
+												&mlx.size_line, &mlx.endian);
 	pile_b = NULL;
 	pile_a = NULL;
 	av = av + 1;
@@ -60,5 +61,5 @@ t_loop	*init_loop(t_pile *pile_a, t_pile *pile_b, t_coord coord, t_mlx *mlx)
 	loop->coord = coord;
 	loop->speed = 4;
 	loop->iteration = 0;
-	return(loop);
+	return (loop);
 }

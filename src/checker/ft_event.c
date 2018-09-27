@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/25 20:08:46 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/27 17:11:14 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/27 18:55:31 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ int			key_hook(int key, t_loop *loop)
 	{
 		free_lst(&loop->pile_a);
 		free_lst(&loop->pile_b);
-		exit (0);
+		free(loop);
+		exit(0);
 	}
-	return(0);
+	return (0);
 }
