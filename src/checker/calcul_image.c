@@ -6,22 +6,22 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 16:22:29 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/27 19:15:46 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/29 16:08:53 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-t_coord	define_x_y_ratio(t_pile *list_a)
+t_coord	define_x_y_ratio(t_pile *pile_a)
 {
 	t_pile	*tmp;
 	t_coord	coord;
 
-	tmp = list_a->next;
-	coord.min = list_a->data;
-	coord.max = list_a->data;
+	tmp = pile_a->next;
+	coord.min = pile_a->data;
+	coord.max = pile_a->data;
 	coord.len_pile = 1;
-	while (tmp != list_a)
+	while (tmp != pile_a)
 	{
 		if (tmp->data < coord.min)
 			coord.min = tmp->data;
@@ -59,6 +59,27 @@ void	add_pile(t_pile *pile, t_coord coord, t_mlx *mlx, int side_screen)
 	y = 1;
 	nbr_elem = 1;
 	tmp = pile;
+	if (coord.min < 0)
+		add_pile_neg(pile, coord, mlx, side_screen);
+	else
+	{
+		if (side_screen == 3)
+			side_screen = (IMG_X / 2 + 1);
+		else
+			side_screen = 0;
+		add_pile_pos(pile, coord, mlx, side_screen);
+	}
+}
+
+void	add_pile_neg(t_pile *pile, t_coord coord, t_mlx *mlx, int side_screen)
+{
+	t_pile	*tmp;
+	int		y;
+	int		nbr_elem;
+
+	y = 1;
+	nbr_elem = 1;
+	tmp = pile;
 	while (y < (coord.y * nbr_elem))
 		fill_line(&mlx->str, (IMG_X / 4) * side_screen, y++,
 													(tmp->data * coord.x));
@@ -74,13 +95,25 @@ void	add_pile(t_pile *pile, t_coord coord, t_mlx *mlx, int side_screen)
 	}
 }
 
-int		color_element(int len)
+void	add_pile_pos(t_pile *pile, t_coord coord, t_mlx *mlx, int side_screen)
 {
-	int color;
+	t_pile	*tmp;
+	int		y;
+	int		nbr_elem;
 
-	if (len < 0)
-		color = 0xfff000;
-	else
-		color = 0x000fff;
-	return (color);
+	y = 1;
+	nbr_elem = 1;
+	tmp = pile;
+	while (y < (coord.y * nbr_elem))
+		fill_line(&mlx->str, side_screen, y++, (tmp->data * coord.x) * 2);
+	nbr_elem++;
+	tmp = tmp->next;
+	while (tmp != pile)
+	{
+		while (y < (coord.y * nbr_elem))
+			fill_line(&mlx->str, side_screen, y++,
+											(tmp->data * coord.x) * 2);
+		nbr_elem++;
+		tmp = tmp->next;
+	}
 }

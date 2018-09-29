@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:08:38 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/27 18:48:13 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/29 15:54:40 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		make_operation_visual(t_loop *loop)
 
 	operation = 0;
 	str_operation = NULL;
-	usleep(1000 * (30 * loop->speed));
+	usleep(1000 * (SPEED * loop->speed));
 	make_instruction(loop, str_operation, operation);
 	draw_pile_image(loop->pile_a, loop->pile_b, loop->coord, loop->mlx);
 	return (1);

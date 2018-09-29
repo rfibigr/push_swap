@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort_pile_algo.c                                   :+:      :+:    :+:   */
+/*   sort_merge.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/11 14:08:38 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/26 12:02:38 by rfibigr          ###   ########.fr       */
+/*   Created: 2018/09/28 22:22:39 by rfibigr           #+#    #+#             */
+/*   Updated: 2018/09/29 15:26:56 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_pile(t_pile **pile_a, t_pile **pile_b)
+void	sort_merge(t_pile **pile_a, t_pile **pile_b)
 {
 	while (pile_is_sort(pile_a) != 1)
 	{

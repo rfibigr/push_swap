@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/23 20:26:52 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/27 19:15:13 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/28 17:55:38 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,20 @@ int		main_visualizer(int ac, char **av)
 
 	if (ac == 2)
 		exit(0);
-	mlx = ft_initialise();
-	mlx.image = mlx_new_image(mlx.init, IMG_X, IMG_Y);
-	mlx.str = mlx_get_data_addr(mlx.image, &mlx.bpp,
-												&mlx.size_line, &mlx.endian);
 	pile_b = NULL;
 	pile_a = NULL;
 	av = av + 1;
 	create_pile(&(pile_a), &av);
-	if (!pile_a)
-		return (0);
+	if (!pile_a || pile_a->next == NULL)
+		exit_ok(pile_a);
 	coord = define_x_y_ratio(pile_a);
 	loop = init_loop(pile_a, pile_b, coord, &mlx);
+	mlx = ft_initialise();
+	mlx.image = mlx_new_image(mlx.init, IMG_X, IMG_Y);
+	mlx.str = mlx_get_data_addr(mlx.image, &mlx.bpp,
+												&mlx.size_line, &mlx.endian);
 	draw_pile_image(pile_a, pile_b, coord, &mlx);
 	mlx_key_hook(mlx.name, key_hook, loop);
-	mlx_loop_hook(mlx.init, make_operation_visual, loop);
 	mlx_loop(mlx.init);
 	return (0);
 }
@@ -59,7 +58,8 @@ t_loop	*init_loop(t_pile *pile_a, t_pile *pile_b, t_coord coord, t_mlx *mlx)
 	loop->pile_a = pile_a;
 	loop->pile_b = pile_b;
 	loop->coord = coord;
-	loop->speed = 4;
+	loop->speed = 10;
 	loop->iteration = 0;
+	loop->start = 0;
 	return (loop);
 }

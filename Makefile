@@ -6,7 +6,7 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/09/27 18:22:39 by rfibigr          ###   ########.fr        #
+#    Updated: 2018/09/28 22:35:14 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -46,8 +46,10 @@ NAME = push_swap checker
 
 #/********************** SOURCE *********************/
 SRC_PUSH =		push_swap.c \
-				sort_pile_algo.c \
-				sort_pile_condition.c \
+				sort.c \
+				sort_merge.c \
+				sort_merge_condition.c \
+				tools_push.c \
 
 SRC_CHECKER =	checker.c \
 				checker_bonus.c \

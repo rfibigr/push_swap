@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/26 19:01:40 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/27 19:13:11 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/29 16:03:12 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,15 @@ void	fill_line(char **img_str, int x, int y, int len)
 			len++;
 		}
 	}
+}
+
+int		color_element(int len)
+{
+	int color;
+
+	if (len < 0)
+		color = 0xfff000;
+	else
+		color = 0x000fff;
+	return (color);
 }

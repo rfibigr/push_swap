@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:08:38 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/27 10:04:20 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/29 17:15:56 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ void	make_operation(t_pile **pile_a, t_pile **pile_b)
 		if (!calcul_operation(str_operation, &operation))
 			exit_error_checker(pile_a, pile_b);
 		make[operation](pile_a, pile_b);
+		ft_strdel(&str_operation);
 	}
+	ft_strdel(&str_operation);
 }
 
 int		calcul_operation(char *str_operation, int *operation)
