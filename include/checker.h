@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/29 16:56:15 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/09/29 17:21:09 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,8 +123,10 @@ void				draw_pile_image(t_pile *pile_a, t_pile *pile_b,
 										t_coord coord, t_mlx *mlx);
 void				add_pile(t_pile *pile_a, t_coord coord,
 										t_mlx *mlx, int side_screen);
-void	add_pile_neg(t_pile *pile, t_coord coord, t_mlx *mlx, int side_screen);
-void	add_pile_pos(t_pile *pile, t_coord coord, t_mlx *mlx, int side_screen);
+void				add_pile_neg(t_pile *pile, t_coord coord, t_mlx *mlx,
+															int side_screen);
+void				add_pile_pos(t_pile *pile, t_coord coord, t_mlx *mlx,
+															int side_screen);
 
 /*
 ** MAKE OPEREATION VISUAL
@@ -137,7 +139,7 @@ void				make_instruction(t_loop *loop, char *str_operation,
 ** FT EVENT
 */
 int					key_hook(int key, t_loop *loop);
-int 				stop_prog(t_loop *loop);
+int					stop_prog(t_loop *loop);
 /*
 ** TOOLS CHECKER
 */
@@ -146,9 +148,5 @@ void				print_result_visualizer(t_pile **pile_a, t_pile **pile_b,
 													t_mlx *mlx, int iteration);
 int					size_pile(t_pile *list_a);
 void				exit_ok(t_pile *list_a);
-
-/*
-** EVENT
-*/
 
 #endif
