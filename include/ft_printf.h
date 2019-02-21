@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/30 12:34:06 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/17 11:41:50 by rfibigr          ###   ########.fr       */
+/*   Updated: 2018/11/09 17:01:52 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@
 # include <inttypes.h>
 # include <stdio.h>
 # include <math.h>
+# include "libft.h"
 
-# define BUFF_SIZE 80
 # define FLAG_NUMBER 5
 # define TRUE 1
 # define FALSE 0
+# define BUFF_SIZE 4096
 
 /*
 ** ***** DATA STRUCT *******
 */
-
 typedef	struct		s_buff
 {
 	char			str[BUFF_SIZE];
@@ -187,9 +187,7 @@ void				modifier_u_z(va_list *ap, t_param *param, t_buff *buff);
 void				print_param(t_param *param);
 void				print_padding(t_padding *padding);
 
-char				*ft_strdup(const char *s);
 size_t				ft_strlen_char(const char *s);
-void				ft_strcp(char *copy, const char *src);
 int					abs_value(int i);
 
 int					is_flag(char a);
@@ -201,5 +199,6 @@ int					is_signed(char a);
 
 int					is_zero_printed(t_param *param);
 int					is_space_printed(t_param *param);
+int					ft_isnumber(char *str);
 
 #endif

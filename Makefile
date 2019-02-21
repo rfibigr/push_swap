@@ -6,7 +6,7 @@
 #    By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/12/01 16:20:20 by rfibigr           #+#    #+#              #
-#    Updated: 2018/09/28 22:35:14 by rfibigr          ###   ########.fr        #
+#    Updated: 2019/02/21 15:15:25 by rfibigr          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 .PHONY: all, clean, fclean, re
@@ -76,7 +76,6 @@ OBJ_CHECKER =		$(SRC_CHECKER:.c=.o)
 OBJ_SHARED  =		$(SRC_SHARED:.c=.o)
 
 LIBNAME =	libft/libft.a \
-			ft_printf/libftprintf.a \
 			minilibx_macos/libmlx.a \
 
 #/********************** PATH  *********************/
@@ -97,8 +96,6 @@ push_swap : $(OBJ_PUSH_P) $(OBJ_SHARED_P)
 	@echo "$(GREEN) --Compiling--\t\tpush_swap"
 	@echo "$(LOW_GREEN) --Compiling lib--\tlibft"
 	@make -C $(LIB_PATH)/libft
-	@echo "$(LOW_GREEN) --Compiling lib--\tft_printf"
-	@make -C $(LIB_PATH)/ft_printf
 	@echo "$(LOW_GREEN) --Compiling lib--\tminilibix"
 	@make -C $(LIB_PATH)/minilibx_macos
 	@echo "$(PURPLE) --Linking--\t\tpush_swap"
@@ -109,8 +106,6 @@ checker : $(OBJ_CHECKER_P) $(OBJ_SHARED_P)
 ifneq (,$(filter checker ,$(MAKECMDGOALS)))
 	@echo "$(LOW_GREEN) --Compiling lib--\tlibft"
 	@make -C $(LIB_PATH)/libft
-	@echo "$(LOW_GREEN) --Compiling lib--\tft_printf"
-	@make -C $(LIB_PATH)/ft_printf
 endif
 	@echo "$(LOW_GREEN) --Compiling lib--\tminilibix"
 	@make -C $(LIB_PATH)/minilibx_macos
@@ -138,22 +133,16 @@ clean :
 	@rm -rf $(OBJ_PATH) 2> /dev/null || true
 	@echo "$(RED) --Cleaning--\t\tlibrary libft"
 	@make clean -C $(LIB_PATH)/libft
-	@echo "$(RED) --Cleaning--\t\tlibrary ft_printf"
-	@make clean -C $(LIB_PATH)/ft_printf
 	@echo "$(RED) --Cleaning--\t\tlibrary minilibx"
 	@make clean -C $(LIB_PATH)/minilibx_macos
 
 clibft :
 	@echo "$(RED) --Cleaning--\t\tlibrary libft"
 	@make clean -C $(LIB_PATH)/libft
-cprintf :
-	@echo "$(RED) --Cleaning--\t\tlibrary ft_printf"
-	@make clean -C $(LIB_PATH)/ft_printf
 
 fclean : clean
 	@echo "$(RED) --Cleaning--\t\texecutable"
 	@rm -rf $(NAME)
 	@make fclean -C $(LIB_PATH)/libft
-	@make fclean -C $(LIB_PATH)/ft_printf
 
 re: fclean all
