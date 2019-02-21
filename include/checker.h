@@ -6,7 +6,7 @@
 /*   By: rfibigr <rfibigr@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/05 16:28:30 by rfibigr           #+#    #+#             */
-/*   Updated: 2018/09/29 17:21:09 by rfibigr          ###   ########.fr       */
+/*   Updated: 2019/02/21 16:17:26 by rfibigr          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 # include "push_swap.h"
 # include "mlx.h"
 
-# define SCREEN_X 500
+# define SCREEN_X 1000
 # define SCREEN_Y 1000
-# define IMG_X 500
+# define IMG_X 1000
 # define IMG_Y 900
 # define SPEED 100
 

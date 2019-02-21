@@ -64,6 +64,17 @@ rra
 pa
 ```
 
+To test with random number form 0 to 100 you can use the following command
+```bash
+ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG | ./checker -v $ARG
+```
+
+In the visulazier mode, you can start and stop the sort with the 'space' key and accelerate or deccelerate with the 'arrow left' and 'arrow right' key.
+to quit press the 'escape' key
+
+
+
+
 ## The push_swap program
 
 push_swap get as an argument the stack a formatted as a list of integers. The first argument should be at the top of the stack (be careful about the order).
@@ -82,6 +93,10 @@ $>./push_swap "3 1 2 0"
 $>./push_swap "3 1" 2 0
 ```
 
+to test with random number from 0 to 100 you can use the following command
+```bash
+ARG=`ruby -e "puts (1..100).to_a.shuffle.join(' ')"`; ./push_swap $ARG
+```
 ## Author
 
 Romain Fibigr : rfibigr@student.42.fr
