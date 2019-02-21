@@ -70,6 +70,7 @@ The program will display a list of instructions possible to sort the stack a. In
 •In case of error, you must display Error followed by a ’\n’ on the standard error.
 
 `usage : ./push_swap [list of number] <br>`
+
 `list of number : list of number without duplicate seperated by a space`
 
 ```bash
