@@ -40,15 +40,14 @@ allowed function to developp the 2 programs
 + free
 + exit
 
-## library used
-
-I use the library [libft](https://github.com/rfibigr/libft)
-and the [minilibx library](https://github.com/rfibigr/push_swap/tree/master/lib/minilibx_macos) (a custom graphic library) to create the visualizer.
-
 to compile use the make command
 ```bash
 $>make
 ```
+## library used
+
+I use the library [libft](https://github.com/rfibigr/libft)
+and the [minilibx library](https://github.com/rfibigr/push_swap/tree/master/lib/minilibx_macos) (a custom graphic library) to create the visualizer.
 
 ## The checker program
 
