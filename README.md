@@ -31,6 +31,8 @@ allowed function to developp the 2 programs
 + free
 + exit
 
+I use the library [libft](https://github.com/rfibigr/libft)
+
 
 to compile use the make command
 ```bash
@@ -79,3 +81,7 @@ $>./push_swap "3 1 2 0"
 
 $>./push_swap "3 1" 2 0
 ```
+
+## Author
+
+Romain Fibigr : rfibigr@student.42.fr
