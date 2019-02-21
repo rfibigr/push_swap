@@ -48,10 +48,10 @@ In case of Error in the input, checker will display "Error\n"
 
 example
 
-`usage : ./checker [-v] [list of number] [instruction]`
-`-v : visual mode`
-`list of number : list of number without duplicate seperated by a space`
-`instruction : set of instruciton followed by a \n`
+usage : ./checker [-v] [list of number] [instruction]
+-v : visual mode
+list of number : list of number without duplicate seperated by a space
+instruction : set of instruciton followed by a \n
 
 ```bash
 $>./checker 3 1 2 0
@@ -69,9 +69,8 @@ push_swap get as an argument the stack a formatted as a list of integers. The fi
 The program will display a list of instructions possible to sort the stack a. Instructions output will must be separaed by a ’\n’
 •In case of error, you must display Error followed by a ’\n’ on the standard error.
 
-`usage : ./push_swap [list of number] <br>`
-
-`list of number : list of number without duplicate seperated by a space`
+usage : ./push_swap [list of number] <br>
+list of number : list of number without duplicate seperated by a space
 
 ```bash
 $>./push_swap 3 1 2 0
