@@ -24,12 +24,6 @@ Only the following operation are allowed :
 
 Two program are developp for this projet. One call checker and one call push_swap
 
-to compile use the make command
-```bash
-$>make
-```
-
-
 allowed function to developp the 2 programs
 + write
 + read
@@ -37,7 +31,13 @@ allowed function to developp the 2 programs
 + free
 + exit
 
-## The checker program "
+
+to compile use the make command
+```bash
+$>make
+```
+
+## The checker program
 
 Checker programm get as an argument the stack a formatted as a list of integers. The first argument should be at the top of
 the stack.
@@ -48,10 +48,10 @@ In case of Error in the input, checker will display "Error\n"
 
 example
 
-`usage : ./checker [-v] [list of number] [instruction]
--v : visual mode
-list of number : list of number without duplicate seperated by a space
-instruction : set of instruciton followed by a \n`
+`usage : ./checker [-v] [list of number] [instruction]`
+`-v : visual mode`
+`list of number : list of number without duplicate seperated by a space`
+`instruction : set of instruciton followed by a \n`
 
 ```bash
 $>./checker 3 1 2 0
@@ -62,15 +62,15 @@ rra
 pa
 ```
 
-## The push_swap program "
+## The push_swap program
 
 push_swap get as an argument the stack a formatted as a list of integers. The first argument should be at the top of the stack (be careful about the order).
 
 The program will display a list of instructions possible to sort the stack a. Instructions output will must be separaed by a ’\n’
 •In case of error, you must display Error followed by a ’\n’ on the standard error.
 
-`usage : ./push_swap [list of number]
-list of number : list of number without duplicate seperated by a space`
+`usage : ./push_swap [list of number] <br>`
+`list of number : list of number without duplicate seperated by a space`
 
 ```bash
 $>./push_swap 3 1 2 0
