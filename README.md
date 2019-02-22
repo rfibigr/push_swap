@@ -33,18 +33,19 @@ To make this project a create a custom sort algorithm based on a merge sort.
 
 Two program are developp for this projet. One call checker and one call push_swap
 
-allowed function to developp the 2 programs
-+ write
-+ read
-+ malloc
-+ free
-+ exit
 
 to compile use the make command
 ```bash
 $>make
 ```
 ## library used
+
+allowed function to developp the 2 programs
++ write
++ read
++ malloc
++ free
++ exit
 
 I use the library [libft](https://github.com/rfibigr/libft)
 and the [minilibx library](https://github.com/rfibigr/push_swap/tree/master/lib/minilibx_macos) (a custom graphic library) to create the visualizer.
