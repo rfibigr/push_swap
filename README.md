@@ -1,8 +1,6 @@
 # Push Swap
 ---
 
-Visualization of my push_swap
-![Alt Text](https://github.com/rfibigr/push_swap/blob/master/divers/ezgif.com-crop.gif)
 
 
 Push swap is a project where you have to sort number in ascending order on a stack.
@@ -11,6 +9,13 @@ To do that you can only use two stack (A and B) and only a few operation describ
 At the start
 + the stack A contains a random number, either positive or negative, without any duplicate
 + the stack B is empty
+
+to know more about the project, you can read the instruction in the [french : push_swap.fr.pdf](https://github.com/rfibigr/push_swap/blob/master/PDF/push_swap.fr.pdf) [english : push_swap.pdf](https://github.com/rfibigr/push_swap/blob/master/PDF/push_swap.en.pdf)
+
+This readme include information from the pdf file.
+
+Visualization of my project
+![Alt Text](https://github.com/rfibigr/push_swap/blob/master/divers/ezgif.com-crop.gif)
 
 ## The rules to sort
 
@@ -66,8 +71,9 @@ To realise the sort i used three algorithms:
 + for all the list (>= at 40 elements) i did a customize short, based on a merge short, and adapated to the contraint of this game.
 The principe is to try to short the stack consecutively by ascending and descending order.
 
+The visualizer is a bonus feature I realise.
 
-## library used
+## Library used
 
 allowed function of standard libc to developp the 2 programs
 + write
