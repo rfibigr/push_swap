@@ -1,6 +1,8 @@
 # Push Swap
+---
 
-
+Visualization of my push_swap
+![Alt Text](https://github.com/rfibigr/push_swap/blob/master/divers/ezgif.com-crop.gif)
 
 
 Push swap is a project where you have to sort in ascending order number into a stack.
@@ -26,8 +28,6 @@ Only the following operation are allowed :
 | rrr					| rra and rrb at the same time |
 
 To make this project a create a custom sort algorithm based on a merge sort.
-
-![Alt Text](https://github.com/rfibigr/push_swap/blob/master/divers/ezgif.com-crop.gif)
 
 
 
